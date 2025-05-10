@@ -1,0 +1,114 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+body {
+  --x-table-cell-padding-y: #{$spacer-sm};
+  --x-table-cell-padding-x: #{$spacer-lg};
+  --x-table-radius: #{$radius-lg};
+  --x-table-row-number-width: 2em;
+}
+
+body.obsidian-app {
+  --table-column-min-width: 3ch;
+  --table-text-size: var(--font-small);
+  --table-white-space: break-word;
+  --table-header-color: var(--bold-color);
+  --table-row-background-hover: var(--background-primary-alt);
+  --table-row-alt-background-hover: var(--table-row-background-hover);
+  --table-add-button-border-width: 0;
+}
+
+.markdown-rendered table {
+  margin-block: 0;
+  overflow: hidden;
+  border-spacing: 0;
+  border-collapse: separate;
+  border: var(--table-border-width) solid var(--table-border-color);
+  border-radius: var(--x-table-radius);
+
+  :is(td, th) {
+    border: unset;
+  }
+
+  > tbody > tr > td {
+    border-top: var(--table-border-width) solid var(--table-border-color);
+  }
+
+  :is(td, th):not(:last-child) {
+    border-right: var(--table-border-width) solid var(--table-border-color);
+  }
+}
+
+.markdown-rendered table :is(td, th),
+.markdown-source-view.mod-cm6 .cm-table-widget .table-cell-wrapper {
+  padding: var(--x-table-cell-padding-y) var(--x-table-cell-padding-x);
+}
+
+.markdown-rendered:not(.cm-embed-block, .table-x-decoration),
+.markdown-source-view:not(.table-x-decoration) {
+  table thead {
+    @include diagonal-lines;
+  }
+}
+
+.markdown-rendered:not(.cm-embed-block, .table-x-full-width),
+.markdown-source-view:not(.table-x-full-width) {
+  .table-wrapper {
+    width: unset !important;
+  }
+
+  table {
+    width: 100%;
+  }
+}
+
+.markdown-rendered:not(.cm-embed-block, .table-x-code-shrink),
+.markdown-source-view:not(.table-x-code-shrink) {
+  td:has(code) {
+    width: 0;
+
+    code,
+    .cm-inline-code {
+      white-space: nowrap;
+    }
+  }
+}
+
+.markdown-rendered:not(.cm-embed-block, .table-x-numbered) table,
+.markdown-source-view:not(.table-x-numbered) table {
+  counter-reset: table-row;
+
+  > thead > tr > th:first-child,
+  > tbody > tr > td:first-child {
+    position: relative;
+    padding-left: calc(var(--x-table-cell-padding-x) + var(--x-table-row-number-width));
+
+    &::before {
+      position: absolute;
+      left: var(--x-table-cell-padding-x);
+      width: var(--x-table-row-number-width);
+      margin-left: calc(var(--x-table-cell-padding-x) * -0.25);
+      color: var(--text-faint);
+      text-align: center;
+      content: "";
+    }
+
+    &:has(.table-cell-wrapper) {
+      &::before {
+        padding-block: var(--x-table-cell-padding-y);
+      }
+
+      .table-cell-wrapper {
+        padding-left: 0;
+      }
+    }
+  }
+
+  > tbody > tr {
+    counter-increment: table-row;
+
+    > td:first-child::before {
+      content: counter(table-row) ".";
+    }
+  }
+}

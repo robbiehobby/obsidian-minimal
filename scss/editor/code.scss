@@ -1,0 +1,100 @@
+@use "../abstract/variables" as *;
+
+body {
+  --x-code-block-padding-y: #{$spacer-lg};
+  --x-code-block-padding-x: #{$spacer-1xl};
+  --x-code-block-radius: #{$radius-lg};
+
+  --x-code-inline-color: var(--text-normal);
+  --x-code-inline-background: var(--background-secondary-alt);
+  --x-code-inline-background-hover: hsla(var(--interactive-accent-hsl), 0.2);
+}
+
+body.obsidian-app {
+  --code-white-space: pre;
+  --code-border-width: #{$border-sm};
+  --code-background: var(--background-primary);
+  --code-radius: #{$radius-md};
+
+  --code-function: var(--color-blue);
+  --code-important: var(--color-purple);
+  --code-keyword: var(--color-purple);
+}
+
+.markdown-rendered code {
+  white-space: var(--code-white-space);
+}
+
+/**
+ * Inline
+ */
+.markdown-rendered :not(pre) > code,
+.cm-inline-code {
+  --code-normal: var(--x-code-inline-color);
+  --code-background: var(--x-code-inline-background);
+  --code-border-width: #{$border-md};
+  --code-border-color: transparent;
+
+  &:hover {
+    --code-background: var(--x-code-inline-background-hover);
+  }
+}
+
+/**
+ * Block
+ */
+.markdown-rendered {
+  pre {
+    padding: var(--x-code-block-padding-y) var(--x-code-block-padding-x);
+    border-radius: var(--x-code-block-radius);
+  }
+
+  button.copy-code-button {
+    display: flex !important;
+    color: var(--text-faint);
+    background-color: var(--background-modifier-hover);
+    opacity: 0;
+    transform: translateZ(0);
+    scale: 0;
+    transition:
+      scale var(--x-transition-fast),
+      opacity var(--x-transition-fast);
+
+    svg {
+      --icon-size: var(--icon-xs);
+    }
+  }
+
+  pre:hover button.copy-code-button,
+  pre button.copy-code-button:has(.lucide-check) {
+    opacity: 1;
+    scale: 1;
+    transition-delay: var(--x-transition-slow);
+  }
+
+  pre button.copy-code-button:hover {
+    color: var(--text-muted);
+  }
+}
+
+.markdown-source-view.mod-cm6 {
+  .code-block-flair {
+    padding: #{$spacer-xs} #{$spacer-sm};
+    font-size: var(--font-ui-smallest);
+    color: var(--text-faint);
+    background-color: var(--background-secondary-alt) !important;
+
+    &:hover {
+      color: var(--text-muted);
+    }
+  }
+
+  .cm-line.HyperMD-codeblock {
+    padding-left: var(--x-code-block-padding-x);
+  }
+}
+
+// Hide the copy code button on blocks that do not have a specified language in editing mode.
+.code-block-flair:has(.lucide-copy) {
+  display: none !important;
+}

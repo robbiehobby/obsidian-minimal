@@ -1,0 +1,54 @@
+body {
+  --x-canvas-embed-padding: 0;
+  --x-canvas-text-align: center;
+}
+
+body .canvas-node.is-themed {
+  --x-canvas-link-accent: color-mix(
+    in oklab,
+    rgb(var(--canvas-color)) var(--x-accent-mix-intensity),
+    var(--x-accent-mix-color)
+  );
+  --x-canvas-link-accent-hover: color-mix(
+    in oklab,
+    rgb(var(--canvas-color)) var(--x-accent-mix-modifier-intensity),
+    var(--x-accent-mix-modifier-color)
+  );
+}
+
+body.obsidian-app .canvas-node.is-themed {
+  --link-color: var(--x-canvas-link-accent);
+  --link-color-hover: var(--x-canvas-link-accent-hover);
+  --link-external-color: var(--link-color);
+  --link-external-color-hover: var(--link-color-hover);
+  --link-unresolved-color: var(--link-color);
+  --link-unresolved-color-hover: var(--link-color-hover);
+}
+
+.canvas-group-label {
+  font-size: var(--x-canvas-group-label-size);
+  font-weight: var(--x-canvas-group-label-weight);
+}
+
+.canvas-path-label {
+  font-size: var(--x-canvas-path-label-size);
+  font-weight: var(--x-canvas-path-label-weight);
+}
+
+.canvas-node-content.markdown-embed {
+  .markdown-preview-view {
+    scrollbar-gutter: auto;
+  }
+
+  &:not(.is-loaded) {
+    text-align: var(--x-canvas-text-align);
+  }
+
+  .markdown-embed-content > .markdown-preview-view {
+    padding: var(--x-canvas-embed-padding);
+  }
+}
+
+.canvas-node.is-themed :not(pre) > code {
+  --code-background: rgba(var(--canvas-color), var(--x-accent-opacity));
+}

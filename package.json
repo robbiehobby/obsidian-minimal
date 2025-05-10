@@ -1,8 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "dev": "sass --no-source-map --watch scss/main.scss \"$(zx obsidian documents)/Notebook/.obsidian/snippets/Minimal.css\"",
-    "build:prod": "sass --no-source-map --style compressed scss/main.scss",
+    "dev": "sass --no-source-map --watch scss/theme.scss \"$(zx obsidian documents)/Notebook/.obsidian/snippets/Minimal.css\"",
+    "build:prod": "sass --no-source-map --style compressed scss/theme.scss",
     "build:sync": "npm run build:prod \"$(zx obsidian documents)/Notebook/.obsidian/snippets/Minimal.css\"",
     "build": "npm run build:prod public/Minimal.css && npm run build:sync"
   },

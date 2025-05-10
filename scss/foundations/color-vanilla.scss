@@ -1,0 +1,71 @@
+body {
+  --x-accent-opacity: 0.15;
+  --x-accent-opacity-modifier: 0.2;
+  --x-accent-mix-intensity: 70%;
+  --x-accent-mix-modifier-intensity: 50%;
+  --x-accent-decoration: var(--background-modifier-border);
+}
+
+body.theme-light {
+  --x-accent-mix-color: black;
+  --x-accent-mix-modifier-color: black;
+}
+
+body.theme-dark {
+  --x-accent-mix-color: white;
+  --x-accent-mix-modifier-color: white;
+}
+
+body.obsidian-app.theme-light,
+body.obsidian-app.is-mobile.theme-light {
+  --color-gray: var(--color-neutral-60);
+  --color-red: var(--color-red-60);
+  --color-green: var(--color-green-60);
+  --color-yellow: var(--color-yellow-60);
+  --color-blue: var(--color-blue-60);
+  --color-purple: var(--color-magenta-60);
+  --color-cyan: var(--color-cyan-60);
+  --color-orange: var(--color-orange-60);
+  --color-pink: var(--color-pink-60);
+
+  --color-gray-rgb: 87, 94, 107;
+  --color-red-rgb: 255, 82, 82;
+  --color-green-rgb: 23, 181, 152;
+  --color-yellow-rgb: 255, 161, 46;
+  --color-blue-rgb: 56, 156, 255;
+  --color-purple-rgb: 218, 110, 242;
+  --color-cyan-rgb: 21, 169, 199;
+  --color-orange-rgb: 251, 124, 60;
+  --color-pink-rgb: 212, 125, 203;
+
+  --background-secondary: var(--color-base-20);
+  --background-secondary-alt: var(--color-base-25);
+
+  --shadow-s: 0px 4px 15px rgb(0 0 0 / 4%);
+}
+
+body.obsidian-app.theme-dark,
+body.obsidian-app.is-mobile.theme-dark {
+  --color-gray: var(--color-neutral-50);
+  --color-red: var(--color-red-50);
+  --color-green: var(--color-green-50);
+  --color-yellow: var(--color-yellow-50);
+  --color-blue: var(--color-blue-50);
+  --color-purple: var(--color-magenta-50);
+  --color-cyan: var(--color-cyan-50);
+  --color-orange: var(--color-orange-50);
+  --color-pink: var(--color-pink-50);
+
+  --color-gray-rgb: 103, 111, 126;
+  --color-red-rgb: 255, 115, 115;
+  --color-green-rgb: 25, 190, 165;
+  --color-yellow-rgb: 255, 194, 120;
+  --color-blue-rgb: 97, 175, 255;
+  --color-purple-rgb: 225, 140, 245;
+  --color-cyan-rgb: 23, 187, 221;
+  --color-orange-rgb: 252, 152, 103;
+  --color-pink-rgb: 220, 150, 213;
+
+  --caret-color: var(--color-cursor);
+  --shadow-s: 0px 4px 15px rgb(0 0 0 / 10%);
+}

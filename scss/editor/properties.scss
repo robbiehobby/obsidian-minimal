@@ -1,0 +1,61 @@
+@use "../abstract/variables" as *;
+
+body.obsidian-app {
+  --metadata-border-radius: #{$radius-lg};
+  --metadata-property-radius: #{$radius-md};
+  --metadata-property-radius-hover: var(--metadata-property-radius);
+  --metadata-property-radius-focus: var(--metadata-property-radius);
+}
+
+.mod-root {
+  --metadata-border-width: #{$border-sm};
+  --metadata-padding: #{$spacer-lg} #{$spacer-1xl};
+}
+
+.mod-root {
+  .metadata-container {
+    margin-bottom: calc(var(--p-spacing) * 1.5);
+    transform: unset;
+  }
+
+  .metadata-properties-heading {
+    display: flex;
+    margin-bottom: 0;
+
+    .collapse-indicator {
+      position: static;
+      order: 1;
+    }
+  }
+
+  .metadata-properties-title {
+    color: var(--text-muted);
+    text-transform: uppercase;
+  }
+
+  .metadata-property-icon {
+    align-items: unset;
+  }
+
+  .metadata-content {
+    margin-top: #{$spacer-sm};
+  }
+
+  .metadata-add-button {
+    margin-top: #{$spacer-md};
+    background-color: transparent;
+    border: #{$border-sm} solid var(--background-modifier-border);
+
+    &:hover {
+      border-color: var(--background-modifier-border-hover);
+    }
+  }
+}
+
+.metadata-property-key {
+  padding-top: 2px;
+}
+
+.workspace > .workspace-split:not(.mod-root) .metadata-property-icon {
+  align-items: end;
+}

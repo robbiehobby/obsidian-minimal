@@ -1,0 +1,150 @@
+:root {
+  --color-blackhole: #060606; // Terminal
+  --color-cursor: #55a5ff; // Cursor
+  --color-selection: #214283; // Selection
+  --color-danger: #652020; // Danger
+
+  --color-accent-00: #ebedf5;
+  --color-accent-10: #d3d9e9;
+  --color-accent-20: #a7b2d3;
+  --color-accent-30: #7b8cbc;
+  --color-accent-40: #5268a3;
+  --color-accent-50: #3c4c77;
+  --color-accent-60: #2c3758;
+  --color-accent-70: #1f263d;
+  --color-accent-80: #131825;
+  --color-accent-90: #0e121c; // Background
+  --color-accent-95: #07090e;
+
+  --color-neutral-00: #cfd6dd; // Text Bold
+  --color-neutral-10: #b7c2cc; // Text
+  --color-neutral-20: #a9b1bc;
+  --color-neutral-30: #a2a8b3;
+  --color-neutral-40: #848b9a; // Text Muted
+  --color-neutral-50: #676f7e; // Text Faint
+  --color-neutral-60: #575e6b; // Text Dim
+  --color-neutral-70: #474d57;
+  --color-neutral-80: #373b43; // Guide Bold
+  --color-neutral-90: #292c36; // Guide
+  --color-neutral-95: #1e2024; // Guide Faint
+
+  --color-gray-00: #f5f5f5;
+  --color-gray-10: #ededed;
+  --color-gray-20: #d9d9d9;
+  --color-gray-30: #bfbfbf;
+  --color-gray-40: #a3a3a3;
+  --color-gray-50: #808080;
+  --color-gray-60: #737373;
+  --color-gray-70: #666;
+  --color-gray-80: #545454;
+  --color-gray-90: #383838;
+  --color-gray-95: #262626;
+
+  --color-red-00: #fff5f5;
+  --color-red-10: #ffebeb;
+  --color-red-20: #ffd6d6;
+  --color-red-30: #ffbdbd;
+  --color-red-40: #ff9e9e;
+  --color-red-50: #ff7373;
+  --color-red-60: #ff5252;
+  --color-red-70: #f00;
+  --color-red-80: #d60000;
+  --color-red-90: #900;
+  --color-red-95: #6b0000;
+
+  --color-green-00: #e4fbf8;
+  --color-green-10: #c9f8f1;
+  --color-green-20: #93f1e3;
+  --color-green-30: #61ead6;
+  --color-green-40: #2be3c8;
+  --color-green-50: #19be9f;
+  --color-green-60: #17b598;
+  --color-green-70: #0f7162;
+  --color-green-80: #09483f;
+  --color-green-90: #05241f;
+  --color-green-95: #021210;
+
+  --color-yellow-00: #fff8f0;
+  --color-yellow-10: #fff4e5;
+  --color-yellow-20: #ffe6c7;
+  --color-yellow-30: #ffdaad;
+  --color-yellow-40: #ffcf94;
+  --color-yellow-50: #ffc278;
+  --color-yellow-60: #ffa12e;
+  --color-yellow-70: #e07b00;
+  --color-yellow-80: #945100;
+  --color-yellow-90: #4d2a00;
+  --color-yellow-95: #241400;
+
+  --color-blue-00: #f5faff;
+  --color-blue-10: #e5f2ff;
+  --color-blue-20: #cce6ff;
+  --color-blue-30: #add6ff;
+  --color-blue-40: #8ac4ff;
+  --color-blue-50: #61afff;
+  --color-blue-60: #389cff;
+  --color-blue-70: #0a85ff;
+  --color-blue-80: #006edb;
+  --color-blue-90: #004f9e;
+  --color-blue-95: #003870;
+
+  --color-magenta-00: #fdf6fe;
+  --color-magenta-10: #faecfd;
+  --color-magenta-20: #f5d9fc;
+  --color-magenta-30: #efc2fa;
+  --color-magenta-40: #eaabf8;
+  --color-magenta-50: #e18cf5;
+  --color-magenta-60: #da6ef2;
+  --color-magenta-70: #d24def;
+  --color-magenta-80: #bf14e6;
+  --color-magenta-90: #850ea0;
+  --color-magenta-95: #620a75;
+
+  --color-cyan-00: #edfafd;
+  --color-cyan-10: #daf6fb;
+  --color-cyan-20: #b5ecf7;
+  --color-cyan-30: #87e1f2;
+  --color-cyan-40: #4bd1ec;
+  --color-cyan-50: #17bbdd;
+  --color-cyan-60: #15a9c7;
+  --color-cyan-70: #1295af;
+  --color-cyan-80: #0f7a8f;
+  --color-cyan-90: #0b5666;
+  --color-cyan-95: #083f4a;
+
+  --color-orange-00: #fff8f5;
+  --color-orange-10: #ffeee6;
+  --color-orange-20: #feddcd;
+  --color-orange-30: #fdc9af;
+  --color-orange-40: #fdb28c;
+  --color-orange-50: #fc9867;
+  --color-orange-60: #fb7c3c;
+  --color-orange-70: #f55505;
+  --color-orange-80: #d24904;
+  --color-orange-90: #963403;
+  --color-orange-95: #642302;
+
+  --color-pink-00: #fcf7fc;
+  --color-pink-10: #f9ecf7;
+  --color-pink-20: #f4ddf1;
+  --color-pink-30: #edc9ea;
+  --color-pink-40: #e4afdf;
+  --color-pink-50: #dc96d5;
+  --color-pink-60: #d47dcb;
+  --color-pink-70: #cb62c0;
+  --color-pink-80: #bb3eaf;
+  --color-pink-90: #822b79;
+  --color-pink-95: #5c1f56;
+
+  --color-violet-00: #f0f0ff;
+  --color-violet-10: #e5e5ff;
+  --color-violet-20: #c7c7ff;
+  --color-violet-30: #adadff;
+  --color-violet-40: #9494ff;
+  --color-violet-50: #7878ff;
+  --color-violet-60: #2e2eff;
+  --color-violet-70: #0000e0;
+  --color-violet-80: #000094;
+  --color-violet-90: #00004d;
+  --color-violet-95: #000024;
+}

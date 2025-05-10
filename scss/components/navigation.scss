@@ -1,0 +1,41 @@
+@use "../abstract/variables" as *;
+
+.nav-file-title-content {
+  flex-grow: 1;
+}
+
+.nav-file-tag {
+  color: var(--text-muted);
+  outline: #{$border-sm} solid var(--background-modifier-border);
+  background-color: transparent;
+  border-radius: #{$radius-sm};
+}
+
+.nav-file-title:hover .nav-file-tag {
+  outline-color: var(--background-modifier-border-hover);
+}
+
+.nav-folder.is-collapsed > .tree-item-self,
+.nav-file-title {
+  .tree-item-icon {
+    opacity: 0.5;
+  }
+}
+
+:is(.nav-file-title:hover, .nav-file-title.is-active) {
+  .tree-item-icon {
+    opacity: 1;
+  }
+}
+
+body:not(.is-mobile) {
+  .view-header-title-container {
+    opacity: 0;
+    transition: opacity var(--x-transition-fast);
+    transition-delay: 0.2s;
+  }
+
+  .view-header:hover .view-header-title-container {
+    opacity: 1;
+  }
+}

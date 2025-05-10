@@ -1,0 +1,50 @@
+body.obsidian-app.theme-dark,
+body.obsidian-app.is-mobile.theme-dark {
+  --x-accent-decoration: rgba(var(--color-gray-rgb), var(--x-accent-opacity));
+  --x-code-inline-background: var(--x-accent-decoration);
+  --x-code-inline-background-hover: rgba(var(--color-gray-rgb), var(--x-accent-opacity-modifier));
+  --x-embed-file-background: var(--x-accent-decoration);
+  --x-embed-file-background-hover: rgba(var(--color-gray-rgb), var(--x-accent-opacity-modifier));
+}
+
+body.obsidian-app.theme-dark,
+body.obsidian-app.is-mobile.theme-dark {
+  --color-base-00: var(--color-accent-90);
+  --color-base-05: var(--color-accent-80);
+  --color-base-10: var(--color-accent-80);
+  --color-base-20: var(--color-accent-90);
+  --color-base-25: var(--color-accent-90);
+  --color-base-30: var(--color-neutral-90);
+  --color-base-35: var(--color-neutral-80);
+  --color-base-40: var(--color-neutral-80);
+  --color-base-50: var(--color-neutral-60);
+  --color-base-60: var(--color-neutral-50);
+  --color-base-70: var(--color-neutral-40);
+  --color-base-100: var(--color-neutral-10);
+
+  --h1-color: var(--color-neutral-00);
+  --h2-color: var(--color-yellow-20);
+  --h3-color: var(--h1-color);
+  --h4-color: var(--h3-color);
+  --h5-color: var(--h4-color);
+  --h6-color: var(--h5-color);
+
+  --bold-color: var(--color-neutral-00);
+
+  --indentation-guide-color: var(--color-neutral-95);
+  --indentation-guide-color-active: var(--color-neutral-90);
+
+  --code-comment: var(--color-neutral-50);
+}
+
+body.obsidian-app.theme-dark.is-focused {
+  .titlebar,
+  .workspace-ribbon.mod-left {
+    --titlebar-background: var(--color-accent-90);
+  }
+
+  .sidebar-toggle-button,
+  .workspace-tabs.mod-top {
+    --tab-container-background: var(--color-accent-90);
+  }
+}

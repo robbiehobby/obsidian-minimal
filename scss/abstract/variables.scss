@@ -1,0 +1,19 @@
+$colors: (red, orange, yellow, green, cyan, blue, purple, pink, gray);
+
+$spacer-xs: var(--size-2-1);
+$spacer-sm: var(--size-4-2);
+$spacer-md: var(--size-4-3);
+$spacer-lg: var(--size-4-4);
+
+$spacer-1xl: var(--size-4-5);
+$spacer-2xl: var(--size-4-6);
+
+$radius-sm: 2px;
+$radius-md: var(--radius-s);
+$radius-lg: var(--radius-s);
+
+$border-sm: 1px;
+$border-md: 2px;
+$border-lg: 5px;
+
+$button-sm: var(--size-2-2) var(--size-2-3);

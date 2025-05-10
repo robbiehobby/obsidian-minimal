@@ -1,0 +1,202 @@
+@use "../abstract/variables" as *;
+
+body {
+  --x-embed-padding-y: #{$spacer-md};
+  --x-embed-padding-x: #{$spacer-lg};
+  --x-embed-underline-color: var(--text-accent);
+  --x-embed-border-width: #{$border-sm};
+  --x-embed-border-color: var(--background-modifier-border);
+  --x-embed-radius: #{$radius-lg};
+  --x-embed-shadow: var(--shadow-s);
+
+  --x-embed-file-background: var(--x-embed-background);
+  --x-embed-file-background-hover: var(--x-embed-background-hover);
+  --x-embed-media-background: var(--background-primary);
+  --x-embed-query-header-background: var(--x-embed-background);
+  --x-embed-query-header-border-color: var(--background-modifier-border);
+}
+
+body.theme-light {
+  --x-embed-background: var(--background-secondary);
+  --x-embed-background-hover: var(--background-secondary-alt);
+}
+
+body.theme-dark {
+  --x-embed-background: var(--background-primary-alt);
+  --x-embed-background-hover: var(--background-secondary-alt);
+}
+
+body.obsidian-app {
+  --pdf-shadow: none;
+}
+
+/**
+ * File
+ */
+.file-embed {
+  &.mod-generic,
+  &.mod-empty {
+    padding: var(--x-embed-padding-y) var(--x-embed-padding-x);
+    font-size: var(--font-small);
+    line-height: var(--line-height-tight);
+    background-color: var(--x-embed-file-background);
+    border-radius: var(--x-embed-radius);
+
+    &:hover {
+      background-color: var(--x-embed-file-background-hover);
+    }
+  }
+}
+
+.file-embed-title {
+  justify-content: flex-start;
+}
+
+.file-embed:hover .file-embed-icon {
+  color: var(--text-normal);
+}
+
+/**
+ * Image
+ */
+.markdown-rendered,
+.markdown-source-view {
+  img {
+    display: block;
+    border-radius: var(--x-embed-radius);
+    box-shadow: var(--x-embed-shadow);
+  }
+}
+
+.markdown-rendered:not(.cm-embed-block, .image-align-start),
+.markdown-source-view:not(.image-align-start) .cm-content {
+  img {
+    margin-inline: auto !important;
+  }
+}
+
+/**
+ * Media
+ */
+audio::-webkit-media-controls-enclosure {
+  background-color: var(--x-embed-media-background);
+  border: var(--x-embed-border-width) solid var(--x-embed-border-color);
+  border-radius: var(--x-embed-radius);
+}
+
+/**
+ * Markdown
+ */
+.inline-embed {
+  .markdown-embed-content,
+  .markdown-preview-view {
+    max-height: unset;
+    overflow: visible;
+  }
+}
+
+.embed-title {
+  padding-bottom: 0;
+  margin-bottom: var(--p-spacing);
+}
+
+.markdown-embed-link {
+  inset-inline-end: 0;
+  top: 0;
+  padding: #{$button-sm};
+}
+
+.markdown-rendered:not(.embed-indent),
+.markdown-source-view:not(.embed-indent) {
+  .internal-embed.markdown-embed {
+    --embed-padding: 0;
+    --embed-border-start: none;
+  }
+}
+
+.popover.hover-popover .markdown-preview-view .markdown-preview-view {
+  padding: 0 !important;
+}
+
+/**
+ * PDF
+ */
+.pdf-embed {
+  box-shadow: var(--x-embed-shadow);
+}
+
+.pdf-toolbar {
+  padding-inline: #{$spacer-sm};
+}
+
+body.obsidian-app.is-mobile .pdf-toolbar-spacer {
+  display: none;
+}
+
+.markdown-source-view.mod-cm6 .pdf-embed .edit-block-button {
+  inset-inline-end: #{$spacer-sm};
+  top: 7px;
+}
+
+body.obsidian-app.is-mobile .markdown-source-view.mod-cm6 .pdf-embed .edit-block-button {
+  top: 11px;
+}
+
+/**
+ * Query
+ */
+.internal-query {
+  border-top: none;
+  box-shadow: var(--x-embed-shadow);
+
+  .tree-item-self {
+    --nav-item-size: var(--font-small);
+    --nav-item-weight: var(--font-medium);
+    --nav-item-weight-hover: var(--nav-item-weight);
+    --nav-item-background-hover: transparent;
+
+    margin-bottom: #{$spacer-sm};
+  }
+
+  .internal-query-header {
+    padding: var(--x-embed-padding-y) var(--x-embed-padding-x);
+    font-size: var(--font-small);
+    color: var(--text-muted);
+    background-color: var(--x-embed-query-header-background);
+    border-bottom: var(--x-embed-border-width) solid var(--x-embed-query-header-border-color);
+    border-radius: var(--x-embed-radius) var(--x-embed-radius) 0 0;
+  }
+
+  .search-result-container {
+    padding: var(--x-embed-padding-x);
+    background-color: var(--x-embed-background);
+    border: none;
+    border-radius: 0 0 var(--x-embed-radius) var(--x-embed-radius);
+  }
+
+  .search-result-file-matches {
+    font-size: var(--font-smaller);
+  }
+
+  .search-result-file-matched-text {
+    text-decoration: underline wavy var(--x-embed-underline-color) var(--x-underline-thickness);
+    background-color: unset;
+  }
+
+  .search-result-hover-button {
+    color: var(--text-muted);
+  }
+
+  .search-empty-state {
+    color: var(--text-normal);
+  }
+
+  .search-empty-state,
+  .search-results-children > .search-result:last-child > .search-result-file-matches {
+    margin-bottom: unset;
+  }
+}
+
+.markdown-preview-view .internal-query {
+  margin-block: var(--p-spacing);
+}

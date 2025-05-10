@@ -1,0 +1,11 @@
+body.obsidian-app {
+  --indent-unit: 0.9em;
+  --list-spacing: 0.1em;
+}
+
+// Fixes the layout shift of task lists inside callouts when switching to edit mode.
+.callout .task-list-item-checkbox {
+  position: relative;
+  top: 0.2em;
+  margin-right: 0.6em;
+}

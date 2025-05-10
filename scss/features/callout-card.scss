@@ -1,0 +1,99 @@
+@use "../abstract/variables" as *;
+
+body {
+  --x-callout-card-padding-y: #{$spacer-md};
+  --x-callout-card-padding-x: #{$spacer-lg};
+  --x-callout-card-columns: 1fr;
+  --x-callout-card-card-spacing: #{$spacer-sm};
+  --x-callout-card-size: var(--font-small);
+  --x-callout-card-border-width: #{$border-sm};
+}
+
+.callout[data-callout*="x-card"] {
+  .callout-content > ul {
+    display: grid;
+    flex-wrap: wrap;
+    grid-template-columns: var(--x-callout-card-columns);
+    gap: var(--x-callout-card-card-spacing);
+    margin-left: 0;
+    font-size: var(--x-callout-card-size);
+    line-height: var(--line-height-tight);
+
+    &,
+    ul {
+      list-style: none;
+    }
+
+    .list-bullet {
+      display: none;
+    }
+
+    li {
+      margin-left: unset;
+    }
+
+    > li {
+      padding: var(--x-callout-card-padding-y) var(--x-callout-card-padding-x);
+      border: var(--x-callout-card-border-width) solid rgba(var(--callout-color), var(--callout-border-opacity));
+      border-radius: var(--callout-radius);
+      mix-blend-mode: var(--callout-blend-mode);
+
+      &:hover {
+        border-color: rgba(var(--callout-color), calc(var(--callout-border-opacity) + 0.1));
+      }
+
+      > ul {
+        margin-top: #{$spacer-sm};
+        font-size: var(--x-callout-card-size);
+      }
+
+      ul::before {
+        content: unset;
+      }
+
+      ul.contains-task-list {
+        margin-left: calc(var(--checkbox-size) + 0.8em);
+      }
+
+      li {
+        color: var(--text-muted);
+      }
+
+      .list-collapse-indicator {
+        padding-right: 0;
+        margin-left: -1em;
+        opacity: 0;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+
+    .task-list-item-checkbox {
+      margin-left: unset;
+    }
+  }
+
+  @media screen and (width >= 750px) {
+    &[data-callout*="2fr"],
+    &[data-callout*="3fr"],
+    &[data-callout*="4fr"] {
+      --x-callout-card-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (width >= 1000px) {
+    &[data-callout*="3fr"] {
+      --x-callout-card-columns: repeat(3, 1fr);
+    }
+
+    &[data-callout*="4fr"] {
+      --x-callout-card-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+.popover.hover-popover .callout[data-callout*="x-card"] {
+  --x-callout-card-columns: 1fr !important;
+}

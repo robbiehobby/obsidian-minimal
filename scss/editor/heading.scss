@@ -1,0 +1,51 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+body.obsidian-app {
+  --inline-title-margin-bottom: #{$spacer-2xl};
+  --heading-spacing: #{$spacer-2xl};
+
+  --h1-font: "Montserrat", var(--font-text);
+  --h2-font: var(--h1-font);
+  --h3-font: "Ubuntu", var(--font-text);
+  --h4-font: var(--h4-font);
+  --h5-font: var(--h4-font);
+  --h6-font: var(--h4-font);
+
+  --h1-size: 2.2em;
+  --h2-size: 1.7em;
+  --h3-size: 1.6em;
+  --h4-size: 1.5em;
+  --h5-size: 1.4em;
+  --h6-size: 1.3em;
+
+  --h1-weight: 600;
+  --h2-weight: var(--h1-weight);
+  --h3-weight: 500;
+  --h4-weight: var(--h3-weight);
+  --h5-weight: var(--h4-weight);
+  --h6-weight: var(--h5-weight);
+}
+
+.empty-state-title {
+  color: var(--h1-color);
+}
+
+.markdown-rendered h2,
+.HyperMD-header-2 {
+  &::before {
+    @include zigzag;
+  }
+}
+
+.markdown-rendered h2::before {
+  padding-top: #{$spacer-md};
+}
+
+.cm-content > .HyperMD-header:first-child::before {
+  padding-top: 0;
+}
+
+.markdown-rendered hr + h2::before {
+  content: unset;
+}

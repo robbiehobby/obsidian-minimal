@@ -1,0 +1,15 @@
+body {
+  --x-footnote-color: var(--text-muted);
+}
+
+.footnotes,
+.HyperMD-footnote {
+  color: var(--x-footnote-color);
+}
+
+.cm-s-obsidian span.cm-footref {
+  position: static;
+  font-size: inherit;
+  vertical-align: inherit;
+  color: var(--x-footnote-color);
+}
