@@ -28,14 +28,15 @@
   }
 }
 
-body:not(.is-mobile) {
-  .view-header-title-container {
-    opacity: 0;
-    transition: opacity var(--x-transition-fast);
-    transition-delay: 0.2s;
+.view-header-title-container:has(.view-header-breadcrumb) {
+  .view-header-title,
+  .view-header-breadcrumb-separator:last-child {
+    display: none;
   }
 
-  .view-header:hover .view-header-title-container {
-    opacity: 1;
+  @media screen and (width >= 750px) {
+    .view-header-breadcrumb-separator {
+      padding-inline: var(--size-2-2);
+    }
   }
 }
