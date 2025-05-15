@@ -69,6 +69,7 @@ body .callout {
  * Default styles
  */
 .callout {
+  margin-block: var(--x-p-spacing-md);
   background-color: rgba(var(--callout-color), var(--x-callout-background-opacity));
   border: unset;
 

@@ -15,12 +15,10 @@ body.obsidian-app {
   --table-header-color: var(--bold-color);
   --table-row-background-hover: var(--background-primary-alt);
   --table-row-alt-background-hover: var(--table-row-background-hover);
-  --table-add-button-border-width: 0;
 }
 
-.markdown-rendered table {
-  margin-block: 0;
-  overflow: hidden;
+.markdown-reading-view .markdown-rendered table {
+  margin-block: var(--x-p-spacing-sm);
   border-spacing: 0;
   border-collapse: separate;
   border: var(--table-border-width) solid var(--table-border-color);
@@ -77,6 +75,10 @@ body.obsidian-app {
 .markdown-rendered:not(.cm-embed-block, .table-x-numbered) table,
 .markdown-source-view:not(.table-x-numbered) table {
   counter-reset: table-row;
+
+  thead > tr > th:first-child .table-col-drag-handle {
+    inset-inline-start: 0;
+  }
 
   > thead > tr > th:first-child,
   > tbody > tr > td:first-child {

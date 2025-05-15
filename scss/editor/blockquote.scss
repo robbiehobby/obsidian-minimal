@@ -23,5 +23,6 @@ body.obsidian-app.theme-dark {
 
 .markdown-rendered blockquote {
   padding: var(--x-blockquote-padding-y) var(--x-blockquote-padding-x);
+  margin-block: var(--x-p-spacing-md);
   border-radius: var(--x-blockquote-radius);
 }

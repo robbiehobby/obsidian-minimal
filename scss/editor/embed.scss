@@ -33,18 +33,16 @@ body.obsidian-app {
 /**
  * File
  */
-.file-embed {
-  &.mod-generic,
-  &.mod-empty {
-    padding: var(--x-embed-padding-y) var(--x-embed-padding-x);
-    font-size: var(--font-small);
-    line-height: var(--line-height-tight);
-    background-color: var(--x-embed-file-background);
-    border-radius: var(--x-embed-radius);
+.file-embed:is(.mod-generic, .mod-empty) {
+  padding: var(--x-embed-padding-y) var(--x-embed-padding-x);
+  margin-block: var(--x-p-spacing-md);
+  font-size: var(--font-small);
+  line-height: var(--line-height-tight);
+  background-color: var(--x-embed-file-background);
+  border-radius: var(--x-embed-radius);
 
-    &:hover {
-      background-color: var(--x-embed-file-background-hover);
-    }
+  &:hover {
+    background-color: var(--x-embed-file-background-hover);
   }
 }
 
@@ -78,6 +76,18 @@ body.obsidian-app {
 /**
  * Media
  */
+video,
+audio {
+  display: block;
+  box-shadow: var(--x-embed-shadow);
+}
+
+video {
+  display: block;
+  overflow: hidden;
+  border-radius: var(--x-embed-radius);
+}
+
 audio::-webkit-media-controls-enclosure {
   background-color: var(--x-embed-media-background);
   border: var(--x-embed-border-width) solid var(--x-embed-border-color);
@@ -119,27 +129,10 @@ audio::-webkit-media-controls-enclosure {
 }
 
 /**
- * PDF
+ * Math
  */
-.pdf-embed {
-  box-shadow: var(--x-embed-shadow);
-}
-
-.pdf-toolbar {
-  padding-inline: #{$spacer-sm};
-}
-
-body.obsidian-app.is-mobile .pdf-toolbar-spacer {
-  display: none;
-}
-
-.markdown-source-view.mod-cm6 .pdf-embed .edit-block-button {
-  inset-inline-end: #{$spacer-sm};
-  top: 7px;
-}
-
-body.obsidian-app.is-mobile .markdown-source-view.mod-cm6 .pdf-embed .edit-block-button {
-  top: 11px;
+.markdown-reading-view mjx-container[jax="CHTML"][display="true"] {
+  margin-block: var(--x-p-spacing-md);
 }
 
 /**
@@ -199,4 +192,28 @@ body.obsidian-app.is-mobile .markdown-source-view.mod-cm6 .pdf-embed .edit-block
 
 .markdown-preview-view .internal-query {
   margin-block: var(--p-spacing);
+}
+
+/**
+ * PDF
+ */
+.pdf-embed {
+  box-shadow: var(--x-embed-shadow);
+}
+
+.pdf-toolbar {
+  padding-inline: #{$spacer-sm};
+}
+
+body.obsidian-app.is-mobile .pdf-toolbar-spacer {
+  display: none;
+}
+
+.markdown-source-view.mod-cm6 .pdf-embed .edit-block-button {
+  inset-inline-end: #{$spacer-sm};
+  top: 7px;
+}
+
+body.obsidian-app.is-mobile .markdown-source-view.mod-cm6 .pdf-embed .edit-block-button {
+  top: 11px;
 }

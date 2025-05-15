@@ -98,3 +98,13 @@ body.obsidian-app {
 .code-block-flair:has(.lucide-copy) {
   display: none !important;
 }
+
+/**
+ * Charts
+ */
+.markdown-rendered:not(.cm-embed-block, .mermaid-x-center),
+.markdown-source-view:not(.mermaid-x-center) {
+  div.mermaid {
+    text-align: center;
+  }
+}
