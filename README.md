@@ -1,4 +1,4 @@
-## Obsidian Minimal Styles
+## Obsidian Native Styles
 
 <br>
 
