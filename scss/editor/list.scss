@@ -1,11 +1,26 @@
+@use "../abstract/variables" as *;
+
 body.obsidian-app {
-  --indent-unit: 0.9em;
-  --list-spacing: 0.1em;
+  --indent-unit: 1em;
+  --list-spacing: 0.2em;
 }
 
-// Fixes the layout shift of task lists inside callouts when switching to edit mode.
+// Fixes the spacing of indented lists.
+.markdown-rendered :is(ul, ol) :is(ul, ol) {
+  margin-top: var(--list-spacing);
+}
+
+// Fixes the alignment of checkbox labels when the label spans multiple lines.
+.markdown-preview-view .task-list-item-checkbox {
+  margin-right: 0.5em;
+}
+
+// Fixes the alignment of checkboxes with their labels in reading mode.
+.markdown-reading-view .markdown-preview-view .task-list-item-checkbox {
+  top: 0.125em;
+}
+
+// Fixes the alignment of checkboxes when switching between reading and editing modes.
 .callout .task-list-item-checkbox {
-  position: relative;
-  top: 0.2em;
-  margin-right: 0.6em;
+  top: 0.2em !important;
 }

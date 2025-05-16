@@ -4,7 +4,10 @@ body {
   --x-callout-padding-y: #{$spacer-1xl};
   --x-callout-padding-x: #{$spacer-1xl};
   --x-callout-title-transform: uppercase;
+
   --x-callout-background-opacity: 0.1;
+  --x-callout-selection-opacity: 0.3;
+  --x-callout-indentation-opacity: 0.2;
 }
 
 body .callout {
@@ -26,6 +29,7 @@ body .callout {
 .callout {
   --callout-padding: var(--x-callout-padding-y) var(--x-callout-padding-x);
   --callout-title-size: var(--font-small);
+  --callout-quote: var(--color-gray-rgb);
   --callout-border-opacity: 0.1;
   --callout-radius: #{$radius-lg};
 
@@ -50,9 +54,9 @@ body .callout {
   --checkbox-border-color: var(--checkbox-color);
   --checkbox-border-color-hover: var(--checkbox-color);
 
-  --text-selection: rgba(var(--callout-color), 0.3);
+  --text-selection: rgba(var(--callout-color), var(--x-callout-selection-opacity));
   --list-marker-color: rgb(var(--callout-color));
-  --indentation-guide-color: rgba(var(--callout-color), 0.2);
+  --indentation-guide-color: rgba(var(--callout-color), var(--x-callout-indentation-opacity));
 }
 
 .callout {
@@ -66,12 +70,15 @@ body .callout {
 }
 
 /**
- * Default styles
+ * Defaults
  */
 .callout {
-  margin-block: var(--x-p-spacing-md);
   background-color: rgba(var(--callout-color), var(--x-callout-background-opacity));
   border: unset;
+
+  .callout {
+    margin-block: calc(var(--p-spacing) * 0.75);
+  }
 
   h2::before {
     content: unset !important;
@@ -89,10 +96,6 @@ body .callout {
   pre {
     --code-border-color: var(--x-callout-code-border-color);
   }
-}
-
-.callout + .callout {
-  margin-top: calc(var(--p-spacing) * 0.5);
 }
 
 .callout-title {

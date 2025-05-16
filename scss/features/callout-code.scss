@@ -26,18 +26,28 @@
     border-bottom-left-radius: 0;
   }
 
-  .el-div:has(.callout[data-callout*="x-code"]) + .el-pre pre {
-    background-color: var(--background-primary-alt);
-    border: none;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+  .el-div:has(.callout[data-callout*="x-code"]) {
+    + .el-pre pre {
+      background-color: rgb(var(--color-gray-rgb), var(--x-callout-background-opacity));
+      border: none;
+    }
+
+    + .el-pre pre,
+    + .el-div:has(.callout[data-callout*="x-code"]) .callout {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
   }
 
   @each $color in $colors {
-    .el-div:has(.callout[data-callout*="x-code"]):has(.callout[data-callout*="x-#{'' + $color}"]) + .el-pre pre {
-      &,
-      button.copy-code-button {
-        background-color: rgba(var(--color-#{$color}-rgb), var(--x-callout-background-opacity));
+    .el-div:has(.callout[data-callout*="x-code"]):has(.callout[data-callout*="x-#{'' + $color}"]) + .el-pre {
+      --text-selection: rgba(var(--color-#{$color}-rgb), var(--x-callout-selection-opacity));
+
+      pre {
+        &,
+        button.copy-code-button {
+          background-color: rgba(var(--color-#{$color}-rgb), var(--x-callout-background-opacity));
+        }
       }
     }
   }

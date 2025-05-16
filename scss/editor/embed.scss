@@ -4,26 +4,12 @@ body {
   --x-embed-padding-y: #{$spacer-md};
   --x-embed-padding-x: #{$spacer-lg};
   --x-embed-underline-color: var(--text-accent);
+  --x-embed-background: rgb(var(--color-gray-rgb), 0.1);
+  --x-embed-background-hover: rgb(var(--color-gray-rgb), 0.2);
   --x-embed-border-width: #{$border-sm};
-  --x-embed-border-color: var(--background-modifier-border);
+  --x-embed-border-color: rgb(var(--color-gray-rgb), 0.2);
   --x-embed-radius: #{$radius-lg};
   --x-embed-shadow: var(--shadow-s);
-
-  --x-embed-file-background: var(--x-embed-background);
-  --x-embed-file-background-hover: var(--x-embed-background-hover);
-  --x-embed-media-background: var(--background-primary);
-  --x-embed-query-header-background: var(--x-embed-background);
-  --x-embed-query-header-border-color: var(--background-modifier-border);
-}
-
-body.theme-light {
-  --x-embed-background: var(--background-secondary);
-  --x-embed-background-hover: var(--background-secondary-alt);
-}
-
-body.theme-dark {
-  --x-embed-background: var(--background-primary-alt);
-  --x-embed-background-hover: var(--background-secondary-alt);
 }
 
 body.obsidian-app {
@@ -35,14 +21,13 @@ body.obsidian-app {
  */
 .file-embed:is(.mod-generic, .mod-empty) {
   padding: var(--x-embed-padding-y) var(--x-embed-padding-x);
-  margin-block: var(--x-p-spacing-md);
   font-size: var(--font-small);
   line-height: var(--line-height-tight);
-  background-color: var(--x-embed-file-background);
+  background-color: var(--x-embed-background);
   border-radius: var(--x-embed-radius);
 
   &:hover {
-    background-color: var(--x-embed-file-background-hover);
+    background-color: var(--x-embed-background-hover);
   }
 }
 
@@ -60,16 +45,8 @@ body.obsidian-app {
 .markdown-rendered,
 .markdown-source-view {
   img {
-    display: block;
     border-radius: var(--x-embed-radius);
     box-shadow: var(--x-embed-shadow);
-  }
-}
-
-.markdown-rendered:not(.cm-embed-block, .image-align-start),
-.markdown-source-view:not(.image-align-start) .cm-content {
-  img {
-    margin-inline: auto !important;
   }
 }
 
@@ -89,7 +66,7 @@ video {
 }
 
 audio::-webkit-media-controls-enclosure {
-  background-color: var(--x-embed-media-background);
+  background-color: var(--x-embed-background);
   border: var(--x-embed-border-width) solid var(--x-embed-border-color);
   border-radius: var(--x-embed-radius);
 }
@@ -132,7 +109,7 @@ audio::-webkit-media-controls-enclosure {
  * Math
  */
 .markdown-reading-view mjx-container[jax="CHTML"][display="true"] {
-  margin-block: var(--x-p-spacing-md);
+  margin-block: calc(var(--p-spacing) * 1.5);
 }
 
 /**
@@ -147,7 +124,9 @@ audio::-webkit-media-controls-enclosure {
     --nav-item-weight: var(--font-medium);
     --nav-item-weight-hover: var(--nav-item-weight);
     --nav-item-background-hover: transparent;
+  }
 
+  .tree-item-self {
     margin-bottom: #{$spacer-sm};
   }
 
@@ -155,8 +134,8 @@ audio::-webkit-media-controls-enclosure {
     padding: var(--x-embed-padding-y) var(--x-embed-padding-x);
     font-size: var(--font-small);
     color: var(--text-muted);
-    background-color: var(--x-embed-query-header-background);
-    border-bottom: var(--x-embed-border-width) solid var(--x-embed-query-header-border-color);
+    background-color: var(--x-embed-background);
+    border-bottom: var(--x-embed-border-width) solid var(--x-embed-border-color);
     border-radius: var(--x-embed-radius) var(--x-embed-radius) 0 0;
   }
 

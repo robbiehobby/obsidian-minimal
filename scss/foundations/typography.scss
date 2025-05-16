@@ -1,9 +1,6 @@
 @use "../abstract/variables" as *;
 
 body {
-  --x-p-spacing-sm: calc(var(--p-spacing) * 0.2);
-  --x-p-spacing-md: calc(var(--p-spacing) * 1.2);
-
   --x-font-weight-base: 425;
   --x-text-selection-color: var(--text-normal);
   --x-strikethrough-color: var(--color-red);

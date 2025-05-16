@@ -40,3 +40,10 @@
     }
   }
 }
+
+// Fixes inconsistent background colors when using a non-standard system color profile. Another workaround is to open
+// Obsidian with the sRGB flag, however, this may cause other color issues, particularly with transitions. A drawback
+// of this workaround is that all notes have a vertical scrollbar, regardless of the content height.
+body:not(.is-mobile) .markdown-reading-view > .markdown-preview-view.markdown-rendered > .markdown-preview-sizer {
+  min-height: 100vh !important;
+}

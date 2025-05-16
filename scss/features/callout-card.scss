@@ -42,17 +42,21 @@ body {
         border-color: rgba(var(--callout-color), calc(var(--callout-border-opacity) + 0.1));
       }
 
-      > ul {
-        margin-top: #{$spacer-sm};
-        font-size: var(--x-callout-card-size);
-      }
-
       ul::before {
         content: unset;
       }
 
+      > ul {
+        margin-top: calc(var(--list-spacing) * 2);
+        font-size: var(--x-callout-card-size);
+      }
+
       ul.contains-task-list {
-        margin-left: calc(var(--checkbox-size) + 0.8em);
+        margin-left: calc(var(--checkbox-size) + 0.5em + var(--list-indent));
+
+        .task-list-item-checkbox {
+          margin-left: calc((var(--checkbox-size) + 0.5em) * -1);
+        }
       }
 
       li {
