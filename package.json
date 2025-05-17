@@ -5,7 +5,7 @@
     "build:prod": "sass --no-source-map --style compressed scss/theme.scss",
     "build:sync:notes": "npm run build:prod \"$(zx obsidian documents)/Notes/.obsidian/snippets/Native.css\"",
     "build:sync:sandbox": "npm run build:prod \"$(zx obsidian documents)/Sandbox/.obsidian/snippets/Native.css\"",
-    "build": "npm run build:prod build/Native.css && npm run build:sync:notes && npm run build:sync:sandbox"
+    "build": "npm run build:prod public/Native.css && npm run build:sync:notes && npm run build:sync:sandbox"
   },
   "devDependencies": {
     "sass": "^1.87.0"
