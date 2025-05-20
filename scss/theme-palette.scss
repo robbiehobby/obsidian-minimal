@@ -1,32 +1,31 @@
 :root {
-  --color-blackhole: #000; // Terminal
-  --color-cursor: #55a5ff; // Cursor
-  --color-selection: #214283; // Selection
-  --color-danger: #652020; // Danger
+  --color-blackhole: #000;
+  --color-cursor: #55a5ff;
+  --color-selection: #214283;
 
-  --color-accent-00: #ebedf5;
-  --color-accent-10: #d3d9e9;
-  --color-accent-20: #a7b2d3;
-  --color-accent-30: #7b8cbc;
-  --color-accent-40: #5268a3;
-  --color-accent-50: #3c4c77;
-  --color-accent-60: #2c3758;
-  --color-accent-70: #1f263d;
-  --color-accent-80: #131825;
-  --color-accent-90: #0e121c; // Background
-  --color-accent-95: #07090e;
+  --color-accent-00: #3f517e;
+  --color-accent-10: #3c4c77;
+  --color-accent-20: #36466d;
+  --color-accent-30: #313f63;
+  --color-accent-40: #2c3958;
+  --color-accent-50: #27324e;
+  --color-accent-60: #202941;
+  --color-accent-70: #1b2336;
+  --color-accent-80: #161c2c;
+  --color-accent-90: #111622;
+  --color-accent-95: #0e121c;
 
-  --color-neutral-00: #cfd6dd; // Text Bold
+  --color-neutral-00: #cfd6dd;
   --color-neutral-10: #c0cad1;
-  --color-neutral-20: #afb9c3; // Text
+  --color-neutral-20: #afb9c3;
   --color-neutral-30: #a2a8b3;
-  --color-neutral-40: #848b9a; // Text Muted
-  --color-neutral-50: #676f7e; // Text Faint
-  --color-neutral-60: #575e6b; // Text Dim
+  --color-neutral-40: #848b9a;
+  --color-neutral-50: #676f7e;
+  --color-neutral-60: #575e6b;
   --color-neutral-70: #474d57;
-  --color-neutral-80: #373b43; // Guide Bold
-  --color-neutral-90: #292c36; // Guide
-  --color-neutral-95: #1e2024; // Guide Faint
+  --color-neutral-80: #373b43;
+  --color-neutral-90: #292c36;
+  --color-neutral-95: #1e2024;
 
   --color-gray-00: #f5f5f5;
   --color-gray-10: #ededed;

@@ -2,7 +2,6 @@
 
 body.obsidian-app {
   --indent-unit: 1em;
-  --list-spacing: 0.2em;
 }
 
 // Fixes the spacing of indented lists.
@@ -15,12 +14,8 @@ body.obsidian-app {
   margin-right: 0.5em;
 }
 
-// Fixes the alignment of checkboxes with their labels in reading mode.
-.markdown-reading-view .markdown-preview-view .task-list-item-checkbox {
-  top: 0.125em;
-}
-
 // Fixes the alignment of checkboxes when switching between reading and editing modes.
+.markdown-reading-view .markdown-preview-view .task-list-item-checkbox,
 .callout .task-list-item-checkbox {
-  top: 0.2em !important;
+  top: 0.125em !important;
 }

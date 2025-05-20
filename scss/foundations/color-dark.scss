@@ -1,6 +1,7 @@
 body.obsidian-app.theme-dark,
 body.obsidian-app.is-mobile.theme-dark {
   --x-accent-decoration: rgba(var(--color-gray-rgb), var(--x-accent-opacity));
+  --x-text-selection-color: var(--color-neutral-00);
   --x-code-inline-background: var(--x-accent-decoration);
   --x-code-inline-background-hover: rgba(var(--color-gray-rgb), var(--x-accent-opacity-modifier));
   --x-embed-file-background: var(--x-accent-decoration);
@@ -9,11 +10,11 @@ body.obsidian-app.is-mobile.theme-dark {
 
 body.obsidian-app.theme-dark,
 body.obsidian-app.is-mobile.theme-dark {
-  --color-base-00: var(--color-accent-90);
-  --color-base-05: var(--color-accent-80);
-  --color-base-10: var(--color-accent-80);
-  --color-base-20: var(--color-accent-90);
-  --color-base-25: var(--color-accent-90);
+  --color-base-00: var(--color-accent-95);
+  --color-base-05: var(--color-accent-90);
+  --color-base-10: var(--color-accent-90);
+  --color-base-20: var(--color-base-00);
+  --color-base-25: var(--color-base-00);
   --color-base-30: var(--color-neutral-90);
   --color-base-35: var(--color-neutral-80);
   --color-base-40: var(--color-neutral-80);
@@ -40,11 +41,11 @@ body.obsidian-app.is-mobile.theme-dark {
 body.obsidian-app.theme-dark.is-focused {
   .titlebar,
   .workspace-ribbon.mod-left {
-    --titlebar-background: var(--color-accent-90);
+    --titlebar-background: var(--color-base-00);
   }
 
   .sidebar-toggle-button,
   .workspace-tabs.mod-top {
-    --tab-container-background: var(--color-accent-90);
+    --tab-container-background: var(--color-base-00);
   }
 }

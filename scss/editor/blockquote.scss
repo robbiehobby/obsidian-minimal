@@ -9,7 +9,7 @@ body {
 body.obsidian-app {
   --blockquote-color: var(--text-muted);
   --blockquote-font-style: italic;
-  --blockquote-background-color: var(--background-primary-alt);
+  --blockquote-background-color: var(--x-embed-background);
   --blockquote-border-thickness: #{$border-lg};
 }
 

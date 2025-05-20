@@ -47,7 +47,7 @@ body {
       }
 
       > ul {
-        margin-top: calc(var(--list-spacing) * 2);
+        margin-top: calc(0.3em * var(--line-height-normal));
         font-size: var(--x-callout-card-size);
       }
 

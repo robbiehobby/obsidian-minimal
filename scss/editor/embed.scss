@@ -93,14 +93,6 @@ audio::-webkit-media-controls-enclosure {
   padding: #{$button-sm};
 }
 
-.markdown-rendered:not(.embed-indent),
-.markdown-source-view:not(.embed-indent) {
-  .internal-embed.markdown-embed {
-    --embed-padding: 0;
-    --embed-border-start: none;
-  }
-}
-
 .popover.hover-popover .markdown-preview-view .markdown-preview-view {
   padding: 0 !important;
 }

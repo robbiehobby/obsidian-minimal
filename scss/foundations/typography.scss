@@ -2,7 +2,6 @@
 
 body {
   --x-font-weight-base: 425;
-  --x-text-selection-color: var(--text-normal);
   --x-strikethrough-color: var(--color-red);
   --x-underline-thickness: #{$border-sm};
 }
@@ -21,7 +20,7 @@ body.obsidian-app {
   --font-ui-small: 12px;
   --font-ui-medium: 13px;
 
-  --line-height-normal: 1.8;
+  --line-height-normal: 1.9;
   --line-height-tight: 1.7;
 
   --text-highlight-bg: var(--text-accent);

@@ -104,11 +104,5 @@ body.obsidian-app {
  */
 div.mermaid {
   overflow-x: auto;
-}
-
-.markdown-rendered:not(.cm-embed-block, .mermaid-x-center),
-.markdown-source-view:not(.mermaid-x-center) {
-  div.mermaid {
-    text-align: center;
-  }
+  text-align: center;
 }
