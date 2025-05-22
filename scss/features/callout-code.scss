@@ -1,16 +1,16 @@
 @use "../abstract/variables" as *;
 
 .callout[data-callout*="x-code"] {
+  --callout-title-size: var(--x-callout-code-title-size);
+  --callout-title-color: var(--text-normal);
+}
+
+.callout[data-callout*="x-code"] {
   --x-callout-padding-y: calc(var(--x-code-block-padding-y) * 0.9);
   --x-callout-padding-x: var(--x-code-block-padding-x);
   --x-callout-title-transform: none;
   --x-callout-code-title-size: var(--font-small);
   --x-callout-code-content-size: var(--font-small);
-}
-
-.callout[data-callout*="x-code"] {
-  --callout-title-size: var(--x-callout-code-title-size);
-  --callout-title-color: var(--text-normal);
 }
 
 .callout[data-callout*="x-code"] .callout-content {
@@ -20,7 +20,8 @@
 .markdown-reading-view {
   .callout[data-callout*="x-code"] {
     margin-bottom: -1em;
-    border-bottom: #{$border-sm} solid rgb(var(--callout-color, #000), var(--callout-border-opacity));
+    border-bottom: var(--x-border-width-sm) solid
+      rgb(var(--callout-color, var(--color-black)), var(--callout-border-opacity));
     border-radius: var(--x-code-block-radius);
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;

@@ -3,26 +3,18 @@ body {
   --x-canvas-text-align: center;
 }
 
-body .canvas-node.is-themed {
-  --x-canvas-link-accent: color-mix(
-    in oklab,
-    rgb(var(--canvas-color)) var(--x-accent-mix-intensity),
-    var(--x-accent-mix-color)
-  );
-  --x-canvas-link-accent-hover: color-mix(
-    in oklab,
-    rgb(var(--canvas-color)) var(--x-accent-mix-modifier-intensity),
-    var(--x-accent-mix-modifier-color)
-  );
-}
-
 body.obsidian-app .canvas-node.is-themed {
-  --link-color: var(--x-canvas-link-accent);
-  --link-color-hover: var(--x-canvas-link-accent-hover);
+  --link-color: var(--x-canvas-accent);
+  --link-color-hover: var(--x-canvas-accent-hover);
   --link-external-color: var(--link-color);
   --link-external-color-hover: var(--link-color-hover);
   --link-unresolved-color: var(--link-color);
   --link-unresolved-color-hover: var(--link-color-hover);
+}
+
+body .canvas-node.is-themed {
+  --x-canvas-accent: color-mix(in oklab, rgb(var(--canvas-color)) var(--x-intensity), var(--x-mix));
+  --x-canvas-accent-hover: color-mix(in oklab, rgb(var(--canvas-color)) var(--x-intensity-hover), var(--x-mix-hover));
 }
 
 .canvas-group-label {
@@ -50,5 +42,5 @@ body.obsidian-app .canvas-node.is-themed {
 }
 
 .canvas-node.is-themed :not(pre) > code {
-  --code-background: rgba(var(--canvas-color), var(--x-accent-opacity));
+  --code-background: rgba(var(--canvas-color), var(--x-opacity));
 }

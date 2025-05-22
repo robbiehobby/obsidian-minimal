@@ -1,12 +1,12 @@
-@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
 
 body {
-  --x-callout-card-padding-y: #{$spacer-md};
-  --x-callout-card-padding-x: #{$spacer-lg};
+  --x-callout-card-padding-y: var(--x-spacer-md);
+  --x-callout-card-padding-x: var(--x-spacer-lg);
   --x-callout-card-columns: 1fr;
-  --x-callout-card-card-spacing: #{$spacer-sm};
+  --x-callout-card-card-spacing: var(--x-spacer-sm);
   --x-callout-card-size: var(--font-small);
-  --x-callout-card-border-width: #{$border-sm};
+  --x-callout-card-border-width: var(--x-border-width-sm);
 }
 
 .callout[data-callout*="x-card"] {

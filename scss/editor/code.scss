@@ -1,24 +1,21 @@
-@use "../abstract/variables" as *;
-
-body {
-  --x-code-block-padding-y: #{$spacer-lg};
-  --x-code-block-padding-x: #{$spacer-1xl};
-  --x-code-block-radius: #{$radius-lg};
-
-  --x-code-inline-color: var(--text-normal);
-  --x-code-inline-background: var(--background-secondary-alt);
-  --x-code-inline-background-hover: hsla(var(--interactive-accent-hsl), 0.2);
-}
-
 body.obsidian-app {
   --code-white-space: pre;
-  --code-border-width: #{$border-sm};
+  --code-border-width: var(--x-border-width-sm);
   --code-background: var(--background-primary);
-  --code-radius: #{$radius-md};
+  --code-radius: var(--x-radius-md);
 
   --code-function: var(--color-blue);
   --code-important: var(--color-purple);
   --code-keyword: var(--color-purple);
+}
+
+body {
+  --x-code-block-padding-y: var(--x-spacer-lg);
+  --x-code-block-padding-x: var(--x-spacer-1xl);
+  --x-code-block-radius: var(--x-radius-lg);
+  --x-code-inline-color: var(--text-normal);
+  --x-code-inline-background: var(--background-secondary-alt);
+  --x-code-inline-background-hover: hsla(var(--interactive-accent-hsl), 0.2);
 }
 
 .markdown-rendered code {
@@ -32,7 +29,7 @@ body.obsidian-app {
 .cm-inline-code {
   --code-normal: var(--x-code-inline-color);
   --code-background: var(--x-code-inline-background);
-  --code-border-width: #{$border-md};
+  --code-border-width: var(--x-border-width-md);
   --code-border-color: transparent;
 
   &:hover {
@@ -57,8 +54,8 @@ body.obsidian-app {
     transform: translateZ(0);
     scale: 0;
     transition:
-      scale var(--x-transition-fast),
-      opacity var(--x-transition-fast);
+      scale var(--x-transition),
+      opacity var(--x-transition);
 
     svg {
       --icon-size: var(--icon-xs);
@@ -79,7 +76,7 @@ body.obsidian-app {
 
 .markdown-source-view.mod-cm6 {
   .code-block-flair {
-    padding: #{$spacer-xs} #{$spacer-sm};
+    padding: var(--x-spacer-xs) var(--x-spacer-sm);
     font-size: var(--font-ui-smallest);
     color: var(--text-faint);
     background-color: var(--background-secondary-alt) !important;

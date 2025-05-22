@@ -1,7 +1,5 @@
-@use "../abstract/variables" as *;
-
 body.obsidian-app {
-  --input-radius: #{$radius-md};
-  --pill-radius: #{$radius-md};
-  --tag-radius: #{$radius-md};
+  --input-radius: var(--x-radius-md);
+  --pill-radius: var(--x-radius-md);
+  --tag-radius: var(--x-radius-md);
 }

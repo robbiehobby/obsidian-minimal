@@ -1,9 +1,8 @@
-@use "../abstract/variables" as *;
 @use "../abstract/mixins" as *;
 
 body.obsidian-app {
-  --inline-title-margin-bottom: #{$spacer-2xl};
-  --heading-spacing: #{$spacer-2xl};
+  --inline-title-margin-bottom: var(--x-spacer-2xl);
+  --heading-spacing: var(--x-spacer-2xl);
 
   --h1-font: "Montserrat", var(--font-text);
   --h2-font: var(--h1-font);
@@ -46,7 +45,7 @@ body.obsidian-app {
 }
 
 .markdown-rendered h2::before {
-  padding-top: #{$spacer-md};
+  padding-top: var(--x-spacer-md);
 }
 
 .cm-content > .HyperMD-header:first-child::before {

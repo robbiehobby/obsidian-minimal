@@ -1,19 +1,17 @@
-@use "../abstract/variables" as *;
+body.obsidian-app {
+  --pdf-shadow: none;
+}
 
 body {
-  --x-embed-padding-y: #{$spacer-md};
-  --x-embed-padding-x: #{$spacer-lg};
+  --x-embed-padding-y: var(--x-spacer-md);
+  --x-embed-padding-x: var(--x-spacer-lg);
   --x-embed-underline-color: var(--text-accent);
   --x-embed-background: rgb(var(--color-gray-rgb), 0.1);
   --x-embed-background-hover: rgb(var(--color-gray-rgb), 0.2);
-  --x-embed-border-width: #{$border-sm};
+  --x-embed-border-width: var(--x-border-width-sm);
   --x-embed-border-color: rgb(var(--color-gray-rgb), 0.2);
-  --x-embed-radius: #{$radius-lg};
+  --x-embed-radius: var(--x-radius-lg);
   --x-embed-shadow: var(--shadow-s);
-}
-
-body.obsidian-app {
-  --pdf-shadow: none;
 }
 
 /**
@@ -90,7 +88,7 @@ audio::-webkit-media-controls-enclosure {
 .markdown-embed-link {
   inset-inline-end: 0;
   top: 0;
-  padding: #{$button-sm};
+  padding: var(--size-2-2) var(--size-2-3);
 }
 
 .popover.hover-popover .markdown-preview-view .markdown-preview-view {
@@ -119,7 +117,7 @@ audio::-webkit-media-controls-enclosure {
   }
 
   .tree-item-self {
-    margin-bottom: #{$spacer-sm};
+    margin-bottom: var(--x-spacer-sm);
   }
 
   .internal-query-header {
@@ -143,7 +141,7 @@ audio::-webkit-media-controls-enclosure {
   }
 
   .search-result-file-matched-text {
-    text-decoration: underline wavy var(--x-embed-underline-color) var(--x-underline-thickness);
+    text-decoration: underline wavy var(--x-embed-underline-color) var(--x-border-width-sm);
     background-color: unset;
   }
 
@@ -173,7 +171,7 @@ audio::-webkit-media-controls-enclosure {
 }
 
 .pdf-toolbar {
-  padding-inline: #{$spacer-sm};
+  padding-inline: var(--x-spacer-sm);
 }
 
 body.obsidian-app.is-mobile .pdf-toolbar-spacer {
@@ -181,7 +179,7 @@ body.obsidian-app.is-mobile .pdf-toolbar-spacer {
 }
 
 .markdown-source-view.mod-cm6 .pdf-embed .edit-block-button {
-  inset-inline-end: #{$spacer-sm};
+  inset-inline-end: var(--x-spacer-sm);
   top: 7px;
 }
 

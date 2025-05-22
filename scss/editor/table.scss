@@ -1,20 +1,18 @@
-@use "../abstract/variables" as *;
 @use "../abstract/mixins" as *;
-
-body {
-  --x-table-cell-padding-y: #{$spacer-sm};
-  --x-table-cell-padding-x: #{$spacer-lg};
-  --x-table-radius: #{$radius-lg};
-  --x-table-row-number-width: 2em;
-}
 
 body.obsidian-app {
   --table-column-min-width: 3ch;
+  --table-header-color: var(--bold-color);
   --table-text-size: var(--font-small);
   --table-white-space: break-word;
-  --table-header-color: var(--bold-color);
-  --table-row-background-hover: var(--background-primary-alt);
   --table-row-alt-background-hover: var(--table-row-background-hover);
+}
+
+body {
+  --x-table-cell-padding-y: var(--x-spacer-sm);
+  --x-table-cell-padding-x: var(--x-spacer-lg);
+  --x-table-row-number-width: 2em;
+  --x-table-radius: var(--x-radius-lg);
 }
 
 .markdown-reading-view .markdown-rendered table {
@@ -39,7 +37,7 @@ body.obsidian-app {
 
 .markdown-rendered table {
   thead {
-    @include diagonal-lines;
+    @include diagonal-lines(var(--table-row-background-hover));
   }
 
   td:has(code) {

@@ -1,29 +1,12 @@
 @use "../abstract/variables" as *;
 
 body {
-  --x-callout-padding-y: #{$spacer-1xl};
-  --x-callout-padding-x: #{$spacer-1xl};
+  --x-callout-padding-y: var(--x-spacer-1xl);
+  --x-callout-padding-x: var(--x-spacer-1xl);
   --x-callout-title-transform: uppercase;
-
-  --x-callout-background-opacity: 0.1;
   --x-callout-selection-opacity: 0.3;
   --x-callout-indentation-opacity: 0.2;
-}
-
-body .callout {
-  --x-callout-accent: color-mix(
-    in oklab,
-    rgb(var(--callout-color)) var(--x-accent-mix-intensity),
-    var(--x-accent-mix-color)
-  );
-  --x-callout-accent-hover: color-mix(
-    in oklab,
-    rgb(var(--callout-color)) var(--x-accent-mix-modifier-intensity),
-    var(--x-accent-mix-modifier-color)
-  );
-  --x-callout-code-background: rgba(var(--callout-color), var(--x-accent-opacity));
-  --x-callout-code-background-hover: rgba(var(--callout-color), var(--x-accent-opacity-modifier));
-  --x-callout-code-border-color: var(--x-callout-code-background);
+  --x-callout-background-opacity: 0.1;
 }
 
 .callout {
@@ -31,7 +14,7 @@ body .callout {
   --callout-title-size: var(--font-small);
   --callout-quote: var(--color-gray-rgb);
   --callout-border-opacity: 0.1;
-  --callout-radius: #{$radius-lg};
+  --callout-radius: var(--x-radius-lg);
 
   --p-spacing: calc(var(--x-callout-padding-y) * 0.75);
 
@@ -57,9 +40,7 @@ body .callout {
   --text-selection: rgba(var(--callout-color), var(--x-callout-selection-opacity));
   --list-marker-color: rgb(var(--callout-color));
   --indentation-guide-color: rgba(var(--callout-color), var(--x-callout-indentation-opacity));
-}
 
-.callout {
   &:is([data-callout="attention"]) {
     --callout-color: var(--color-red-rgb);
   }
@@ -67,6 +48,14 @@ body .callout {
   &:is([data-callout="missing"]) {
     --callout-color: var(--color-orange-rgb);
   }
+}
+
+.callout {
+  --x-callout-accent: color-mix(in oklab, rgb(var(--callout-color)) var(--x-intensity), var(--x-mix));
+  --x-callout-accent-hover: color-mix(in oklab, rgb(var(--callout-color)) var(--x-intensity-hover), var(--x-mix-hover));
+  --x-callout-code-background: rgba(var(--callout-color), var(--x-opacity));
+  --x-callout-code-background-hover: rgba(var(--callout-color), var(--x-opacity-hover));
+  --x-callout-code-border-color: var(--x-callout-code-background);
 }
 
 /**
@@ -99,7 +88,7 @@ body .callout {
 }
 
 .callout-title {
-  gap: #{$spacer-sm};
+  gap: var(--x-spacer-sm);
   text-transform: var(--x-callout-title-transform);
 }
 

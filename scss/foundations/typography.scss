@@ -1,64 +1,49 @@
-@use "../abstract/variables" as *;
-
-body {
-  --x-font-weight-base: 425;
-  --x-strikethrough-color: var(--color-red);
-  --x-underline-thickness: #{$border-sm};
-}
-
-body.theme-light {
-  --x-scrollbar-color: rgb(0 0 0 / 12%) transparent;
-}
-
-body.theme-dark {
-  --x-scrollbar-color: rgb(255 255 255 / 12%) transparent;
-}
-
 body.obsidian-app {
   --p-spacing: 1.5rem;
-
-  --font-ui-small: 12px;
   --font-ui-medium: 13px;
-
+  --font-ui-small: 12px;
   --line-height-normal: 1.9;
   --line-height-tight: 1.7;
-
+  --font-normal: 450;
   --text-highlight-bg: var(--text-accent);
 }
 
-body.obsidian-app.theme-dark {
-  --text-selection: var(--color-selection);
-}
-
 body {
-  font-weight: var(--x-font-weight-base);
+  font-weight: var(--font-normal);
+
+  &.theme-light * {
+    scrollbar-color: rgb(0 0 0 / 12%) transparent;
+  }
+
+  &.theme-dark * {
+    scrollbar-color: rgb(255 255 255 / 12%) transparent;
+  }
 }
 
 * {
-  scrollbar-color: var(--x-scrollbar-color);
   scrollbar-width: thin;
+
+  &::selection {
+    color: var(--x-text-selection-color);
+  }
+
+  &::spelling-error {
+    text-decoration-color: var(--color-red);
+  }
 }
 
-::selection {
-  color: var(--x-text-selection-color);
-}
-
-::spelling-error,
+*::spelling-error,
 .search-result-file-matched-text,
 .markdown-rendered mark,
 .cm-s-obsidian span.cm-highlight {
   text-decoration: underline;
-  text-decoration-thickness: var(--x-underline-thickness);
+  text-decoration-thickness: var(--border-width);
   text-decoration-style: wavy;
   text-decoration-color: var(--text-highlight-bg);
   background-color: transparent;
 }
 
-::spelling-error {
-  text-decoration-color: var(--color-red);
-}
-
 del,
 .cm-s-obsidian .cm-strikethrough {
-  color: var(--x-strikethrough-color);
+  color: var(--color-red);
 }

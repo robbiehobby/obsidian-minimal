@@ -1,0 +1,44 @@
+body.obsidian-app.theme-light,
+body.obsidian-app.is-mobile.theme-light {
+  --color-gray: var(--light-mode-neutral);
+  --color-red: var(--light-mode-red);
+  --color-green: var(--light-mode-green);
+  --color-yellow: var(--light-mode-yellow);
+  --color-blue: var(--light-mode-blue);
+  --color-purple: var(--light-mode-purple);
+  --color-cyan: var(--light-mode-cyan);
+  --color-orange: var(--light-mode-orange);
+  --color-pink: var(--light-mode-pink);
+
+  --color-gray-rgb: var(--light-mode-neutral-rgb);
+  --color-red-rgb: var(--light-mode-red-rgb);
+  --color-green-rgb: var(--light-mode-green-rgb);
+  --color-yellow-rgb: var(--light-mode-yellow-rgb);
+  --color-blue-rgb: var(--light-mode-blue-rgb);
+  --color-purple-rgb: var(--light-mode-purple-rgb);
+  --color-cyan-rgb: var(--light-mode-cyan-rgb);
+  --color-orange-rgb: var(--light-mode-orange-rgb);
+  --color-pink-rgb: var(--light-mode-pink-rgb);
+
+  --background-secondary: var(--color-base-20);
+  --background-secondary-alt: var(--color-base-25);
+
+  --caret-color: var(--color-blue-45);
+  --table-row-background-hover: var(--background-secondary);
+
+  --shadow-s: 0px 4px 15px rgb(0 0 0 / 4%);
+}
+
+body.obsidian-app.theme-light,
+body.obsidian-app.is-mobile.theme-light {
+  --x-mix: var(--color-black);
+  --x-mix-hover: var(--color-black);
+
+  --x-decoration: rgba(var(--light-mode-neutral-rgb), var(--x-opacity));
+
+  --x-code-inline-background: var(--x-decoration);
+  --x-code-inline-background-hover: rgba(var(--light-mode-neutral-rgb), var(--x-opacity-hover));
+
+  --x-embed-file-background: var(--x-decoration);
+  --x-embed-file-background-hover: rgba(var(--light-mode-neutral-rgb), var(--x-opacity-hover));
+}

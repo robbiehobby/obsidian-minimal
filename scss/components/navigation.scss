@@ -1,14 +1,12 @@
-@use "../abstract/variables" as *;
-
 .nav-file-title-content {
   flex-grow: 1;
 }
 
 .nav-file-tag {
   color: var(--text-muted);
-  outline: #{$border-sm} solid var(--background-modifier-border);
+  outline: var(--x-border-width-sm) solid var(--background-modifier-border);
   background-color: transparent;
-  border-radius: #{$radius-sm};
+  border-radius: var(--x-radius-sm);
 }
 
 .nav-file-title:hover .nav-file-tag {

@@ -1,17 +1,17 @@
 body.obsidian-app.theme-light,
 body.obsidian-app.is-mobile.theme-light {
   .tooltip {
-    --background-modifier-message: #000;
+    --background-modifier-message: var(--color-black);
   }
 }
 
 body.obsidian-app.theme-dark,
 body.obsidian-app.is-mobile.theme-dark {
   .tooltip {
-    --background-modifier-message: #fff;
+    --background-modifier-message: var(--color-white);
   }
 
   .tooltip {
-    color: var(--color-base-00);
+    color: var(--color-black);
   }
 }

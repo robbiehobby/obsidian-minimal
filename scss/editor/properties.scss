@@ -1,15 +1,13 @@
-@use "../abstract/variables" as *;
-
 body.obsidian-app {
-  --metadata-border-radius: #{$radius-lg};
-  --metadata-property-radius: #{$radius-md};
+  --metadata-border-radius: var(--x-radius-lg);
+  --metadata-property-radius: var(--x-radius-md);
   --metadata-property-radius-hover: var(--metadata-property-radius);
   --metadata-property-radius-focus: var(--metadata-property-radius);
 }
 
 .mod-root {
-  --metadata-border-width: #{$border-sm};
-  --metadata-padding: #{$spacer-lg} #{$spacer-1xl};
+  --metadata-padding: var(--x-spacer-lg) var(--x-spacer-1xl);
+  --metadata-border-width: var(--x-border-width-sm);
 }
 
 .mod-root {
@@ -38,13 +36,13 @@ body.obsidian-app {
   }
 
   .metadata-content {
-    margin-top: #{$spacer-sm};
+    margin-top: var(--x-spacer-sm);
   }
 
   .metadata-add-button {
-    margin-top: #{$spacer-md};
+    margin-top: var(--x-spacer-md);
     background-color: transparent;
-    border: #{$border-sm} solid var(--background-modifier-border);
+    border: var(--x-border-width-sm) solid var(--background-modifier-border);
 
     &:hover {
       border-color: var(--background-modifier-border-hover);

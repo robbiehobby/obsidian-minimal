@@ -1,14 +1,8 @@
-@use "../abstract/variables" as *;
-
-body {
-  --x-hr-border-style: dashed;
-}
-
 body.obsidian-app {
-  --hr-thickness: #{$border-md};
+  --hr-thickness: var(--x-border-width-md);
 }
 
 hr,
 .markdown-rendered hr {
-  border-top-style: var(--x-hr-border-style);
+  border-top-style: var(--x-border-style);
 }
