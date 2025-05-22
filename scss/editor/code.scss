@@ -7,6 +7,30 @@ body.obsidian-app {
   --code-function: var(--color-blue);
   --code-important: var(--color-purple);
   --code-keyword: var(--color-purple);
+  --code-property: var(--color-blue);
+  --code-tag: var(--color-blue);
+  --code-operator: var(--code-normal);
+  --code-punctuation: var(--code-normal);
+}
+
+.token {
+  font-weight: var(--font-normal) !important;
+
+  &.comment {
+    font-style: italic;
+  }
+
+  &.number {
+    color: var(--color-pink);
+  }
+
+  &.variable {
+    color: var(--code-normal);
+  }
+
+  &.constant {
+    color: var(--color-red);
+  }
 }
 
 body {
