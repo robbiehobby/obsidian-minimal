@@ -1,0 +1,198 @@
+@use "../abstract/mixins" as *;
+
+.markdown-source-view.mod-cm6 .cm-embed-block:not(.cm-table-widget):hover {
+  border-radius: var(--n-radius);
+}
+
+/**
+ * File
+ */
+.file-embed {
+  &.mod-generic,
+  &.mod-empty {
+    padding: var(--size-4-2) var(--size-4-3);
+    font-size: var(--font-small);
+    background-color: unset;
+    border: var(--divider-width) solid var(--background-modifier-border);
+    border-radius: var(--n-radius);
+
+    &:hover {
+      background-color: var(--background-secondary);
+    }
+
+    svg {
+      --icon-size: var(--icon-s);
+    }
+  }
+}
+
+.file-embed-title {
+  justify-content: flex-start;
+}
+
+.file-embed:hover .file-embed-icon {
+  color: var(--text-normal);
+}
+
+/**
+ * Image
+ */
+.markdown-rendered,
+.markdown-source-view {
+  img {
+    border-radius: var(--n-radius);
+    box-shadow: var(--shadow-s);
+  }
+}
+
+/**
+ * Media
+ */
+video,
+audio {
+  display: block;
+  box-shadow: var(--shadow-s);
+}
+
+video {
+  display: block;
+  overflow: hidden;
+  border-radius: var(--n-radius);
+}
+
+audio::-webkit-media-controls-enclosure {
+  background-color: var(--background-secondary);
+  border: unset;
+  border-radius: var(--n-radius);
+}
+
+/**
+ * Markdown
+ */
+.inline-embed {
+  .markdown-embed-content,
+  .markdown-preview-view {
+    max-height: unset;
+    overflow: visible;
+  }
+}
+
+.embed-title {
+  padding-bottom: 0;
+  margin-bottom: var(--p-spacing);
+}
+
+.markdown-embed-link {
+  inset-inline-end: 0;
+  top: 0;
+  padding: var(--size-2-2) var(--size-2-3);
+}
+
+.popover.hover-popover .markdown-preview-view .markdown-preview-view {
+  padding: 0 !important;
+}
+
+/**
+ * Math
+ */
+.markdown-reading-view mjx-container[jax="CHTML"][display="true"] {
+  margin-block: calc(var(--p-spacing) * 1.5);
+}
+
+/**
+ * Query
+ */
+.internal-query {
+  border-top: none;
+  box-shadow: var(--shadow-s);
+
+  .internal-query-header {
+    padding: var(--size-4-3) var(--size-4-4);
+    margin-bottom: var(--divider-width);
+    font-size: var(--font-small);
+    font-weight: var(--font-semibold);
+    color: var(--bold-color);
+    border-radius: var(--n-radius) var(--n-radius) 0 0;
+
+    @include polka-dots(var(--table-header-background));
+  }
+
+  .search-result-container {
+    padding: unset;
+    counter-reset: search-result;
+    background-color: var(--n-accent-background);
+    border: unset;
+    border-radius: 0 0 var(--n-radius) var(--n-radius);
+
+    &::before {
+      @include scroll-fade($background: var(--n-accent-background), $inset: var(--size-4-3));
+    }
+
+    &::after {
+      @include scroll-fade($background: var(--n-accent-background), $inset: var(--size-4-3), $position: "bottom");
+    }
+  }
+
+  .search-results-children,
+  .search-empty-state {
+    padding: var(--size-4-3) var(--size-4-4) var(--size-4-4) var(--size-4-4);
+    margin: 0;
+  }
+
+  .search-results-children {
+    min-height: unset !important;
+    max-height: 800px;
+    padding-bottom: var(--size-4-4);
+    overflow: auto;
+  }
+
+  &:has(.search-empty-state) .search-results-children {
+    display: none;
+  }
+
+  .search-result-file-matches {
+    min-height: unset !important;
+    background-color: unset;
+  }
+
+  .tree-item-self {
+    --nav-item-size: var(--font-small);
+    --nav-item-weight: var(--font-medium);
+    --nav-item-weight-hover: var(--nav-item-weight);
+
+    margin-bottom: var(--size-4-2);
+  }
+
+  .search-result-hover-button {
+    color: var(--text-muted);
+  }
+
+  .search-results-children > .search-result:last-child > .search-result-file-matches {
+    margin-bottom: unset;
+  }
+}
+
+.markdown-preview-view .internal-query {
+  margin-block: var(--p-spacing);
+}
+
+/**
+ * PDF
+ */
+.pdf-embed {
+  box-shadow: var(--shadow-s);
+}
+
+.pdf-toolbar {
+  padding-inline: var(--size-4-2);
+  background-color: var(--background-secondary);
+}
+
+body.obsidian-app.is-mobile .pdf-toolbar-spacer {
+  display: none;
+}
+
+.markdown-source-view.mod-cm6 .pdf-embed .edit-block-button {
+  inset-inline-end: var(--size-2-3);
+  background-color: transparent;
+}

@@ -1,0 +1,32 @@
+@use "palettes/kanagawa";
+
+body.obsidian-app {
+  --divider-color: var(--color-base-20);
+  --ribbon-background: var(--color-base-00);
+
+  &.is-focused {
+    .sidebar-toggle-button.mod-right,
+    .workspace-ribbon.mod-left,
+    .mod-top .workspace-tab-header-container {
+      --titlebar-background: var(--color-base-20);
+      --tab-container-background: var(--color-base-20);
+    }
+
+    .mod-sidedock .workspace-tabs:not(.mod-top) .workspace-tab-header-container {
+      --tab-container-background: var(--color-base-00);
+    }
+  }
+
+  &:not(.is-focused) {
+    --titlebar-background: var(--color-base-00);
+    --tab-container-background: var(--color-base-00);
+  }
+
+  .workspace-split.mod-sidedock {
+    --background-secondary: var(--color-base-00);
+  }
+}
+
+.modal-sidebar {
+  background-color: var(--color-base-00);
+}

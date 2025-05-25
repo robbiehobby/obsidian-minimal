@@ -1,0 +1,12 @@
+body.obsidian-app {
+  --hr-thickness: 2px;
+}
+
+.markdown-rendered hr,
+.cm-line.hr hr {
+  margin-block: calc(var(--p-spacing) * 1.25);
+}
+
+.cm-line.hr hr {
+  margin-block: calc(var(--p-spacing) * 0.25);
+}

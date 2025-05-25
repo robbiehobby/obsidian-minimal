@@ -1,0 +1,40 @@
+@mixin scroll-fade($background: var(--background-primary), $height: var(--size-4-4), $inset: 0, $position: "top") {
+  position: absolute;
+  inset-inline: #{$inset};
+  z-index: 1;
+  width: calc(100% - (#{$inset} * 2));
+  height: #{$height};
+  pointer-events: none;
+  content: "";
+  background-image: linear-gradient(to bottom, #{$background}, rgb(var(--mono-rgb-0), 0));
+
+  @if $position == "bottom" {
+    bottom: 0;
+    transform: rotate(180deg);
+  }
+}
+
+@mixin polka-dots($background: var(--background-primary), $color: var(--mono-rgb-0), $intensity: 0.25) {
+  background-color: #{$background};
+  background-image:
+    radial-gradient(rgb(#{$color}, #{$intensity}) 10%, transparent 20%),
+    radial-gradient(rgb(#{$color}, #{$intensity}) 10%, transparent 20%);
+  background-position:
+    0 0,
+    5px 5px;
+  background-size: 10px 10px;
+}
+
+@mixin zig-zag($color: var(--divider-color)) {
+  --zig-zag: repeat-x
+    conic-gradient(from calc(145deg / -2) at bottom, #0000, #000 1deg calc(145deg - 1deg), #0000 145deg);
+
+  display: block;
+  height: calc(2.5px + 15px / (2 * tan(145deg / 2)));
+  margin-bottom: var(--size-4-4);
+  content: "";
+  background: #{$color};
+  mask:
+    50% calc(-1 * 2.5px) / 15px var(--zig-zag) exclude,
+    50% / 15px var(--zig-zag);
+}

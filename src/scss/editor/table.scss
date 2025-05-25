@@ -1,0 +1,90 @@
+@use "../abstract/mixins" as *;
+
+body.obsidian-app {
+  --table-column-min-width: 2ch;
+  --table-header-size: var(--font-small);
+  --table-header-weight: var(--font-semibold);
+  --table-text-size: var(--font-small);
+  --table-white-space: break-word;
+  --table-border-width: var(--divider-width);
+}
+
+.el-table {
+  margin-block: var(--p-spacing);
+}
+
+.markdown-reading-view .markdown-rendered table {
+  margin-block: unset;
+  overflow: hidden;
+  font-size: inherit;
+  border: unset;
+  border-radius: var(--n-radius);
+
+  thead > tr:first-child > th {
+    border-top: unset;
+  }
+
+  tbody > tr:last-child > td {
+    border-bottom: unset;
+  }
+
+  &:dir(ltr) thead > tr > th:is(:first-child:not(:last-child)),
+  &:dir(ltr) tbody > tr > td:is(:first-child:not(:last-child)),
+  &:dir(rtl) thead > tr > th:is(:last-child:not(:first-child)),
+  &:dir(rtl) tbody > tr > td:is(:last-child:not(:first-child)) {
+    border-left: unset;
+  }
+
+  &:dir(rtl) thead > tr > th:is(:first-child:not(:last-child)),
+  &:dir(rtl) tbody > tr > td:is(:first-child:not(:last-child)),
+  &:dir(ltr) thead > tr > th:is(:last-child:not(:first-child)),
+  &:dir(ltr) tbody > tr > td:is(:last-child:not(:first-child)) {
+    border-right: unset;
+  }
+}
+
+.markdown-rendered table {
+  thead > tr {
+    @include polka-dots(var(--table-header-background));
+  }
+
+  td:has(code) {
+    width: 0;
+  }
+
+  .cm-inline-code {
+    white-space: nowrap;
+  }
+
+  :not(pre) > code,
+  .cm-inline-code {
+    --code-normal: var(--text-accent);
+    --code-border-width: 0;
+
+    padding: 0;
+  }
+}
+
+.markdown-rendered table :is(td, th),
+.markdown-source-view.mod-cm6 .cm-table-widget .table-cell-wrapper {
+  padding: var(--size-4-3) var(--size-4-4);
+}
+
+.markdown-source-view.mod-cm6 .cm-table-widget {
+  .table-row-btn {
+    inset-inline: var(--table-border-width);
+    width: auto;
+  }
+
+  .table-col-btn {
+    inset-block: var(--table-border-width);
+    height: auto;
+  }
+
+  .table-row-drag-handle,
+  .table-row-btn,
+  .table-col-drag-handle,
+  .table-col-btn {
+    opacity: 0.5;
+  }
+}

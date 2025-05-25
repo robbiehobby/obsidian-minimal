@@ -1,0 +1,14 @@
+.markdown-rendered:not(.cm-embed-block, .table-x-shrink),
+.markdown-source-view:not(.table-x-shrink) {
+  .table-wrapper {
+    width: unset !important;
+  }
+
+  table {
+    width: 100%;
+
+    code {
+      white-space: pre;
+    }
+  }
+}

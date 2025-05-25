@@ -1,0 +1,128 @@
+@use "native";
+
+:root {
+  --color-kanagawa-red-1: #43242b;
+  --color-kanagawa-red-2: #d27e99;
+  --color-kanagawa-red-3: #e46876;
+
+  --color-kanagawa-green-1: #7aa89f;
+  --color-kanagawa-green-2: #68ad99;
+
+  --color-kanagawa-yellow-1: #836f4a;
+  --color-kanagawa-yellow-2: #938056;
+  --color-kanagawa-yellow-3: #c0a36e;
+  --color-kanagawa-yellow-4: #e6c384;
+  --color-kanagawa-yellow-5: #dca561;
+  --color-kanagawa-yellow-6: #b98d7b;
+
+  --color-kanagawa-blue-1: #9cabca;
+  --color-kanagawa-blue-2: #6693bf;
+  --color-kanagawa-blue-3: #7e9cd8;
+
+  --color-kanagawa-purple-1: #16161d;
+  --color-kanagawa-purple-2: #181820;
+  --color-kanagawa-purple-3: #2a2a37;
+  --color-kanagawa-purple-4: #363646;
+  --color-kanagawa-purple-5: #54546d;
+  --color-kanagawa-purple-6: #957fb8;
+  --color-kanagawa-purple-7: #b8b4d0;
+}
+
+/**
+ * Dark Mode
+ */
+body.obsidian-app.theme-dark {
+  --color-base-00: hsl(var(--accent-h) calc(var(--accent-s) * 0.25) calc(50% - 43%));
+  --color-base-05: hsl(var(--accent-h) calc(var(--accent-s) * 0.4) calc(50% - 40%));
+  --color-base-10: hsl(var(--accent-h) calc(var(--accent-s) * 0.4) calc(50% - 35%));
+  --color-base-20: hsl(var(--accent-h) calc(var(--accent-s) * 0.1) calc(50% - 34%));
+  --color-base-25: hsl(var(--accent-h) calc(var(--accent-s) * 0.1) calc(50% - 32%));
+  --color-base-30: hsl(var(--accent-h) calc(var(--accent-s) * 0.1) calc(50% - 30%));
+  --color-base-35: hsl(var(--accent-h) calc(var(--accent-s) * 0.1) calc(50% - 26%));
+  --color-base-40: hsl(var(--accent-h) calc(var(--accent-s) * 0.1) calc(50% - 24%));
+  --color-base-50: hsl(var(--accent-h) calc(var(--accent-s) * 0.02) calc(90% - 50%));
+  --color-base-60: hsl(var(--accent-h) calc(var(--accent-s) * 0.02) calc(90% - 42%));
+  --color-base-70: hsl(var(--accent-h) calc(var(--accent-s) * 0.02) calc(90% - 41%));
+  --color-base-100: hsl(var(--accent-h) calc(var(--accent-s) * 0.02) calc(90% - 16%));
+
+  --color-gray: var(--dark-mode-neutral);
+  --color-gray-rgb: var(--dark-mode-neutral-rgb);
+  --color-red: var(--color-kanagawa-red-3);
+  --color-red-rgb: var(--dark-mode-red-rgb);
+  --color-green: var(--color-kanagawa-green-2);
+  --color-green-rgb: var(--dark-mode-green-rgb);
+  --color-yellow: var(--color-kanagawa-yellow-4);
+  --color-yellow-rgb: var(--dark-mode-yellow-rgb);
+  --color-blue: var(--color-kanagawa-blue-2);
+  --color-blue-rgb: var(--dark-mode-blue-rgb);
+  --color-purple: var(--color-kanagawa-purple-6);
+  --color-purple-rgb: var(--dark-mode-purple-rgb);
+  --color-cyan: var(--color-kanagawa-blue-3);
+  --color-cyan-rgb: var(--dark-mode-cyan-rgb);
+  --color-orange: var(--color-kanagawa-yellow-5);
+  --color-orange-rgb: var(--dark-mode-orange-rgb);
+  --color-pink: var(--color-kanagawa-red-2);
+  --color-pink-rgb: var(--dark-mode-pink-rgb);
+
+  --color-accent-1: hsl(calc(var(--accent-h) - 3) calc(var(--accent-s) * 1.02) calc(90% - 10%));
+  --color-accent-2: hsl(calc(var(--accent-h) - 3) calc(var(--accent-s) * 1.02) calc(90% - 5%));
+
+  --background-modifier-form-field: var(--color-neutral-00);
+
+  --bold-color: hsl(var(--accent-h) calc(var(--accent-s) * 0.1) calc(90% - 5%));
+  --text-selection: var(--color-blue-25);
+  --text-highlight-bg: var(--text-accent);
+  --shadow-s: 0px 4px 15px rgb(var(--mono-rgb-0), 0.1);
+
+  --code-background: var(--color-base-00);
+  --code-normal: var(--color-neutral-65);
+  --code-comment: var(--color-neutral-40);
+
+  --table-background: var(--n-accent-background);
+  --table-header-color: var(--bold-color);
+  --table-header-background: var(--color-base-30);
+  --table-header-background-hover: var(--table-header-background);
+  --table-column-alt-background: none;
+  --table-row-background: none;
+  --table-row-background-hover: var(--n-accent-background-hover);
+  --table-row-alt-background-hover: var(--table-row-background-hover);
+  --table-border-color: var(--color-base-00);
+
+  --n-scrollbar-color: rgb(var(--mono-rgb-100), 0.12);
+  --n-divider-color: var(--color-base-35);
+
+  --n-button-background: var(--color-base-20);
+  --n-button-background-hover: var(--color-base-30);
+
+  --n-accent-background: hsl(var(--accent-h) calc(var(--accent-s) * 0.36) calc(50% - 37%));
+  --n-accent-background-hover: hsl(var(--accent-h) calc(var(--accent-s) * 0.36) calc(50% - 35%));
+
+  --n-accent-border: hsl(var(--accent-h) calc(var(--accent-s) * 0.3) calc(50% - 32%));
+}
+
+/**
+ * Light Mode
+ */
+body.obsidian-app.theme-light {
+  --color-gray: var(--light-mode-neutral);
+  --color-red: var(--color-kanagawa-red-3);
+  --color-green: var(--color-kanagawa-green-2);
+  --color-yellow: var(--color-kanagawa-yellow-4);
+  --color-blue: var(--color-kanagawa-blue-2);
+  --color-purple: var(--color-kanagawa-purple-6);
+  --color-cyan: var(--color-kanagawa-blue-3);
+  --color-orange: var(--color-kanagawa-yellow-5);
+  --color-pink: var(--color-kanagawa-red-2);
+
+  --color-gray-rgb: var(--light-mode-neutral-rgb);
+  --color-red-rgb: var(--light-mode-red-rgb);
+  --color-green-rgb: var(--light-mode-green-rgb);
+  --color-yellow-rgb: var(--light-mode-yellow-rgb);
+  --color-blue-rgb: var(--light-mode-blue-rgb);
+  --color-purple-rgb: var(--light-mode-purple-rgb);
+  --color-cyan-rgb: var(--light-mode-cyan-rgb);
+  --color-orange-rgb: var(--light-mode-orange-rgb);
+  --color-pink-rgb: var(--light-mode-pink-rgb);
+
+  --shadow-s: 0px 4px 15px rgb(var(--mono-rgb-0), 0.04);
+}

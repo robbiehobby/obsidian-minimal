@@ -1,0 +1,90 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.metadata-properties {
+  --metadata-gap: 0;
+  --metadata-divider-width: 1px;
+  --metadata-divider-color: var(--divider-color);
+  --metadata-property-radius: var(--n-radius);
+  --metadata-property-radius-hover: var(--metadata-property-radius);
+  --metadata-property-radius-focus: var(--metadata-property-radius);
+}
+
+.mod-root {
+  .metadata-container {
+    --metadata-padding: var(--size-4-3) var(--size-4-5);
+    --metadata-border-width: var(--divider-width);
+    --metadata-border-radius: var(--n-radius);
+
+    & {
+      margin-bottom: var(--size-4-9);
+      transform: unset !important;
+    }
+  }
+
+  .metadata-properties-heading {
+    display: flex;
+    align-items: center;
+    padding-inline: 0;
+    margin-bottom: 0;
+
+    .collapse-indicator {
+      position: static;
+      order: 1;
+    }
+  }
+
+  .metadata-properties {
+    margin: var(--size-4-3) 1px var(--size-4-2);
+  }
+
+  .metadata-properties-title {
+    font-size: var(--font-small);
+    font-weight: var(--font-semibold);
+    text-transform: uppercase;
+  }
+
+  @media screen and (width >= 644px) {
+    .metadata-property-key {
+      padding-block: var(--size-4-1);
+    }
+
+    .metadata-property-icon {
+      margin-inline: var(--size-2-2);
+    }
+  }
+
+  .metadata-add-button {
+    background-color: var(--n-button-background);
+
+    &:hover {
+      background-color: var(--n-button-background-hover);
+    }
+  }
+}
+
+.metadata-property {
+  &[data-property-type="multitext"] {
+    &:not([data-property-key="tags"]) {
+      --pill-decoration: var(--tag-decoration);
+      --pill-decoration-hover: var(--tag-decoration-hover);
+      --pill-background: rgb(var(--mono-rgb-100), 0.1);
+      --pill-background-hover: rgb(var(--mono-rgb-100), 0.16);
+      --pill-padding-x: var(--tag-padding-x);
+      --pill-padding-y: var(--tag-padding-y);
+      --pill-radius: var(--tag-radius);
+      --pill-weight: var(--tag-weight);
+      --pill-focus-width: 100%;
+      --pill-focus-left-adjust: 0;
+
+      --link-decoration: none !important;
+      --link-decoration-hover: none !important;
+      --link-external-decoration: none !important;
+      --link-external-decoration-hover: none !important;
+
+      .multi-select-pill {
+        line-height: 1;
+      }
+    }
+  }
+}

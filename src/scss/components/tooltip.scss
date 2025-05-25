@@ -1,0 +1,17 @@
+body.obsidian-app.theme-dark {
+  .tooltip {
+    --background-modifier-message: rgb(var(--mono-rgb-100));
+
+    color: rgb(var(--mono-rgb-0));
+  }
+
+  .notice {
+    color: rgb(var(--mono-rgb-0));
+    background-color: rgb(var(--mono-rgb-100));
+  }
+}
+
+.notice {
+  padding: var(--size-2-3) var(--size-4-3);
+  border-radius: var(--radius-s);
+}

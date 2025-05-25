@@ -1,0 +1,46 @@
+body.obsidian-app:not(.is-mobile) {
+  &.is-focused .workspace-tabs:not(.mod-stacked) {
+    &.mod-active .workspace-tab-header.is-active .workspace-tab-header-inner {
+      background-color: var(--background-modifier-active-hover);
+
+      &,
+      .workspace-tab-header-inner-icon {
+        color: var(--tab-text-color-focused-active-current);
+      }
+    }
+  }
+
+  .mod-root .workspace-tabs:not(.mod-stacked) {
+    .workspace-tab-header-container-inner {
+      gap: var(--size-2-3);
+      padding-block: 0;
+      margin-top: 0;
+    }
+
+    .workspace-tab-header {
+      --tab-outline-width: 0;
+      --tab-background-active: transparent;
+      --tab-radius: 0;
+      --tab-radius-active: 0;
+
+      padding: var(--size-2-3) 0;
+    }
+
+    .workspace-tab-header-inner {
+      background-color: var(--background-modifier-hover);
+      border-radius: var(--radius-s);
+    }
+
+    .workspace-tab-header:hover .workspace-tab-header-inner {
+      color: var(--text-normal);
+    }
+
+    .workspace-tab-header,
+    .workspace-tab-header-inner {
+      &::before,
+      &::after {
+        content: unset !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+.canvas-node.is-themed {
+  --link-color: color-mix(in oklab, rgb(var(--canvas-color)) var(--n-mix), rgb(var(--mono-rgb-100)));
+  --link-color-hover: color-mix(in oklab, rgb(var(--canvas-color)) var(--n-mix-hover), rgb(var(--mono-rgb-100)));
+  --link-external-color: var(--link-color);
+  --link-external-color-hover: var(--link-color-hover);
+  --link-unresolved-color: var(--link-color);
+  --link-unresolved-color-hover: var(--link-color-hover);
+
+  :not(pre) > code {
+    --code-background: rgb(var(--canvas-color), var(--n-opacity-dim));
+  }
+}
+
+.canvas-group-label,
+.canvas-path-label {
+  font-size: var(--font-ui-small);
+  font-weight: var(--font-medium);
+}
+
+.canvas-node-container {
+  border-width: 1px;
+}
+
+.canvas-node-content.markdown-embed {
+  .markdown-preview-view {
+    scrollbar-gutter: auto;
+  }
+
+  &:not(.is-loaded) {
+    text-align: center;
+  }
+
+  .markdown-embed-content > .markdown-preview-view {
+    padding: 0;
+  }
+}

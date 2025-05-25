@@ -1,0 +1,43 @@
+@use "../../abstract/variables" as *;
+
+.markdown-reading-view {
+  .callout[data-callout*="<code>"] {
+    margin-bottom: calc(var(--p-spacing) * -1);
+    outline: unset;
+    border-bottom: var(--divider-width) solid var(--background-primary);
+    border-radius: var(--callout-radius);
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .el-div:has(.callout[data-callout*="<code>"]) {
+    + .el-pre pre {
+      background-color: rgb(var(--color-gray-rgb), 0.1) !important;
+      border: none;
+    }
+
+    + .el-pre pre,
+    + .el-div:has(.callout[data-callout*="<code>"]) .callout {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+
+  @each $color in $colors {
+    .el-div:has(.callout[data-callout*="<code>"]):has(.callout[data-callout*="<#{'' + $color}>"]) + .el-pre {
+      --text-selection: rgb(var(--color-#{$color}-rgb), 0.1);
+
+      pre {
+        &,
+        button.copy-code-button {
+          color: rgb(var(--color-#{$color}-rgb), 0.6);
+          background-color: rgb(var(--color-#{$color}-rgb), 0.1) !important;
+
+          &:hover {
+            color: rgb(var(--color-#{$color}-rgb));
+          }
+        }
+      }
+    }
+  }
+}

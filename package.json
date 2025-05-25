@@ -1,13 +1,18 @@
 {
   "private": true,
   "scripts": {
-    "dev": "sass --no-source-map --watch scss/theme.scss \"$(zx obsidian documents)/Sandbox/.obsidian/snippets/Native.css\"",
-    "build:prod": "sass --no-source-map --style compressed scss/theme.scss",
-    "build:sync:notes": "npm run build:prod \"$(zx obsidian documents)/Notes/.obsidian/snippets/Native.css\"",
-    "build:sync:sandbox": "npm run build:prod \"$(zx obsidian documents)/Sandbox/.obsidian/snippets/Native.css\"",
-    "build": "npm run build:prod public/Native.css && npm run build:sync:notes && npm run build:sync:sandbox"
+    "dev": "sass --no-source-map --watch src/scss/index.scss \"$(zx obsidian documents)/Sandbox/.obsidian/snippets/Native.css\"",
+    "build:icons": "node src/js/iconify.mts",
+    "build:prod": "sass --no-source-map --style compressed src/scss/index.scss public/Native.css",
+    "build:sync:notes": "cp -f public/Native.css \"$(zx obsidian documents)/Notes/.obsidian/snippets/Native.css\"",
+    "build:sync:sandbox": "cp -f public/Native.css \"$(zx obsidian documents)/Sandbox/.obsidian/snippets/Native.css\"",
+    "build:sync": "npm run build:sync:notes & npm run build:sync:sandbox",
+    "build": "npm run build:icons && npm run build:prod && npm run build:sync"
   },
   "devDependencies": {
+    "@iconify-json/catppuccin": "^1.2.11",
+    "@iconify-json/lucide": "^1.2.45",
+    "@types/node": "^22.15.29",
     "sass": "^1.87.0"
   }
 }

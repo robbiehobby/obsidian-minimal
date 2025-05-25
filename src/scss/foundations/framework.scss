@@ -1,0 +1,20 @@
+body.obsidian-app {
+  --file-line-width: 750px;
+  --outline-width: 1.5px;
+  --tab-outline-width: var(--outline-width);
+  --divider-width: var(--outline-width);
+
+  --status-bar-radius: var(--n-radius) 0 0 0;
+
+  --n-opacity-faint: 0.1;
+  --n-opacity-dim: 0.15;
+  --n-opacity-muted: 0.2;
+
+  --n-mix: 90%;
+  --n-mix-hover: 60%;
+
+  --n-duration: 0.2s;
+  --n-duration-slow: 0.5s;
+
+  --n-radius: var(--radius-s);
+}

@@ -1,0 +1,48 @@
+body.obsidian-app {
+  --p-spacing: 1.8rem;
+
+  --font-text: "SF Pro Text", var(--font-text-override), var(--font-default);
+  --font-ui-medium: 13px;
+  --font-ui-small: 12px;
+  --font-ui-smaller: 11px;
+  --font-normal: 450;
+
+  --line-height-normal: 2;
+  --line-height-tight: 1.7;
+
+  --n-font-heading: "SF Pro Display", var(--font-text);
+  --n-letter-spacing: 0.012em;
+
+  font-weight: var(--font-normal);
+  letter-spacing: var(--n-letter-spacing);
+}
+
+* {
+  scrollbar-color: var(--n-scrollbar-color) transparent;
+  scrollbar-width: thin;
+}
+
+::selection {
+  color: var(--bold-color);
+}
+
+::spelling-error {
+  text-decoration-color: var(--color-red) !important;
+}
+
+::spelling-error,
+.search-result-file-matched-text,
+.markdown-rendered mark,
+.cm-s-obsidian span.cm-highlight,
+.community-item .suggestion-highlight {
+  text-decoration: underline;
+  text-decoration-thickness: 1px !important;
+  text-decoration-style: wavy;
+  text-decoration-color: var(--text-highlight-bg);
+  background-color: transparent !important;
+}
+
+del,
+.cm-s-obsidian .cm-strikethrough {
+  color: var(--color-red);
+}

@@ -1,0 +1,116 @@
+.callout[data-callout*="<card"] {
+  --n-callout-card-columns: 1fr;
+  --n-callout-card-list-spacing: calc(0.2em * var(--line-height-tight));
+
+  .callout-content > ul {
+    display: grid;
+    flex-wrap: wrap;
+    grid-template-columns: var(--n-callout-card-columns);
+    gap: var(--size-4-2);
+    margin-left: 0;
+    font-size: var(--font-small);
+    line-height: var(--line-height-tight);
+
+    &,
+    ul {
+      list-style: none;
+
+      &::before {
+        content: unset;
+      }
+    }
+
+    ul,
+    ul li {
+      position: static;
+    }
+
+    li {
+      margin-inline: unset;
+    }
+
+    > li {
+      padding: var(--size-4-3) var(--size-4-4);
+      background-color: rgb(var(--callout-color), calc(var(--callout-border-opacity) + 0.02)) !important;
+      border-radius: var(--callout-radius);
+      transition: background-color var(--n-duration);
+
+      &:hover {
+        background-color: rgb(var(--callout-color), calc(var(--callout-border-opacity) + 0.05)) !important;
+      }
+
+      ul,
+      li:not(.task-list-item) {
+        margin-top: var(--n-callout-card-list-spacing);
+      }
+
+      li:has(+ li.task-list-item) {
+        margin-bottom: var(--n-callout-card-list-spacing);
+      }
+
+      li {
+        color: rgb(var(--mono-rgb-100), 0.5);
+      }
+    }
+
+    &.contains-task-list > li.task-list-item,
+    &.contains-task-list > li:has(ul.contains-task-list) {
+      padding-inline: var(--size-4-9);
+    }
+
+    .list-collapse-indicator {
+      padding-inline: unset;
+      margin-inline: calc(var(--size-4-3) * -1) 0;
+    }
+
+    &:has(ul.contains-task-list) .list-collapse-indicator {
+      margin-inline: calc(var(--size-4-8) * -1) 0;
+    }
+
+    .list-bullet {
+      display: none;
+    }
+
+    li:has(ul.contains-task-list) {
+      &:not(.task-list-item)::before,
+      li:not(.task-list-item)::before {
+        display: inline-block;
+        width: var(--list-bullet-size);
+        height: var(--list-bullet-size);
+        margin-inline: calc((var(--checkbox-size) * -1.25) + (var(--list-bullet-size) * 0.25))
+          calc(var(--checkbox-size) - (var(--list-bullet-size) * 0.25));
+        vertical-align: middle;
+        content: "";
+        background-color: var(--list-marker-color);
+        border-radius: var(--list-bullet-radius);
+      }
+    }
+
+    &:not(:has(ul.contains-task-list)) :is(li::marker, .list-bullet) {
+      display: none;
+      color: transparent;
+    }
+  }
+
+  @media screen and (width >= 750px) {
+    &[data-callout*="<card(2fr)>"],
+    &[data-callout*="<card(3fr)>"],
+    &[data-callout*="<card(4fr)>"] {
+      --n-callout-card-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (width >= 1000px) {
+    &[data-callout*="<card(3fr)>"] {
+      --n-callout-card-columns: repeat(3, 1fr);
+    }
+
+    &[data-callout*="<card(4fr)>"] {
+      --n-callout-card-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+.popover.hover-popover .callout[data-callout*="<card"] {
+  --n-callout-card-columns: 1fr !important;
+}

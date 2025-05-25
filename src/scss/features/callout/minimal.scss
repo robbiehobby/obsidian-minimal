@@ -1,0 +1,9 @@
+.callout[data-callout*="<mini>"] {
+  .callout-content > :first-child {
+    margin-top: 0;
+  }
+
+  .callout-title {
+    display: none;
+  }
+}

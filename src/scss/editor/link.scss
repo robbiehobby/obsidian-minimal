@@ -1,0 +1,15 @@
+@use "sass:map";
+@use "../icons/lucide" as *;
+
+body.obsidian-app {
+  --link-weight: inherit;
+}
+
+.external-link {
+  padding-inline: unset;
+  background: unset !important;
+}
+
+.external-link:not(:has(img))::after {
+  content: unset;
+}

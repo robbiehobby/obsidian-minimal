@@ -1,0 +1,42 @@
+@use "sass:map";
+@use "../../icons/catppuccin" as *;
+@use "../../icons/lucide" as *;
+
+.callout {
+  &[data-callout*="<catppuccin"],
+  &[data-callout*="<lucide"] {
+    .callout-icon {
+      display: flex;
+      height: 100%;
+
+      &::before {
+        display: block;
+        width: var(--icon-size);
+        height: var(--icon-size);
+        content: "";
+        background-color: rgb(var(--callout-color));
+        -webkit-mask-size: contain;
+      }
+
+      svg {
+        display: none;
+      }
+    }
+  }
+
+  &[data-callout*="<catppuccin"] {
+    @each $name, $data in $catppuccin {
+      &[data-callout*="<catppuccin(#{$name})>"] > .callout-title > .callout-icon::before {
+        -webkit-mask-image: #{$data};
+      }
+    }
+  }
+
+  &[data-callout*="<lucide"] {
+    @each $name, $data in $lucide {
+      &[data-callout*="<lucide(#{$name})>"] > .callout-title > .callout-icon::before {
+        -webkit-mask-image: #{$data};
+      }
+    }
+  }
+}

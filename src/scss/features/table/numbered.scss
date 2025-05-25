@@ -1,0 +1,42 @@
+@use "../../abstract/mixins" as *;
+
+.markdown-rendered:not(.cm-embed-block, .table-x-numbered) table {
+  counter-reset: table-row;
+
+  > thead > tr > th:first-child,
+  > tbody > tr > td:first-child {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      width: 2em;
+      margin-inline: calc(var(--size-4-4) * -0.25) 0;
+      color: var(--text-faint);
+      text-align: center;
+    }
+
+    &:dir(ltr) {
+      padding-left: calc(var(--size-4-4) + 2em);
+
+      &::before {
+        left: var(--size-4-3);
+      }
+    }
+
+    &:dir(rtl) {
+      padding-right: calc(var(--size-4-4) + 2em);
+
+      &::before {
+        right: var(--size-4-3);
+      }
+    }
+  }
+
+  > tbody > tr {
+    counter-increment: table-row;
+
+    > td:first-child::before {
+      content: counter(table-row);
+    }
+  }
+}

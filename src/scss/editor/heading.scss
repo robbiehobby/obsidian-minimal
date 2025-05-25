@@ -1,0 +1,67 @@
+@use "../abstract/mixins" as *;
+
+body.obsidian-app {
+  --heading-spacing: calc(var(--p-spacing) * 1.4);
+  --inline-title-margin-bottom: var(--p-spacing);
+
+  --h1-font: var(--n-font-heading);
+  --h2-font: var(--n-font-heading);
+  --h3-font: var(--n-font-heading);
+  --h4-font: var(--n-font-heading);
+  --h5-font: var(--n-font-heading);
+  --h6-font: var(--n-font-heading);
+
+  --h1-size: 2em;
+  --h2-size: 1.6em;
+  --h3-size: 1.4em;
+  --h4-size: 1.3em;
+  --h5-size: 1.2em;
+  --h6-size: 1.1em;
+
+  --h1-line-height: calc(var(--line-height-tight) - 0.2);
+  --h2-line-height: calc(var(--line-height-tight) - 0.2);
+  --h3-line-height: var(--line-height-tight);
+  --h4-line-height: var(--line-height-tight);
+  --h5-line-height: var(--line-height-tight);
+  --h6-line-height: calc(var(--line-height-tight) + 0.1);
+
+  --h1-weight: var(--font-semibold);
+  --h2-weight: var(--font-semibold);
+  --h3-weight: var(--font-semibold);
+  --h4-weight: var(--font-semibold);
+  --h5-weight: var(--font-semibold);
+  --h6-weight: var(--font-semibold);
+
+  --h1-color: var(--bold-color);
+  --h2-color: var(--bold-color);
+}
+
+.empty-state-title,
+.empty-state-action.mod-close {
+  display: none;
+}
+
+.inline-title,
+.markdown-rendered :is(h1, h2, h3, h4, h5, h6),
+.HyperMD-header {
+  letter-spacing: var(--n-letter-spacing) !important;
+}
+
+.markdown-rendered h2,
+.markdown-source-view.is-live-preview .HyperMD-header-2 {
+  &::before {
+    @include zig-zag(var(--n-divider-color));
+  }
+}
+
+.markdown-rendered h2::before {
+  padding-top: var(--size-4-3);
+}
+
+.cm-content > .HyperMD-header:first-child::before {
+  padding-top: 0;
+}
+
+.markdown-rendered hr + h2::before {
+  content: unset;
+}

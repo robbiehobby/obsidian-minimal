@@ -1,0 +1,124 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+body.obsidian-app,
+:is(.rtl, .is-rtl, .mod-rtl) {
+  --callout-padding: var(--size-4-4) var(--size-4-5);
+}
+
+body.obsidian-app {
+  --callout-title-size: var(--font-small);
+  --callout-border-opacity: 0.1;
+  --callout-radius: var(--n-radius);
+}
+
+.callout {
+  --text-selection: rgb(var(--callout-color), 0.3);
+  --indentation-guide-color: rgb(var(--callout-color), 0.2);
+
+  --h1-color: var(--text-normal);
+  --h2-color: var(--text-normal);
+  --h3-color: var(--text-normal);
+  --h4-color: var(--text-normal);
+  --h5-color: var(--text-normal);
+  --h6-color: var(--text-normal);
+
+  --list-marker-color: rgb(var(--callout-color));
+  --link-color: var(--n-callout-accent);
+  --link-color-hover: var(--n-callout-accent-hover);
+  --link-external-color: var(--link-color);
+  --link-external-color-hover: var(--link-color-hover);
+  --link-unresolved-color: var(--link-color);
+  --link-unresolved-color-hover: var(--link-color-hover);
+
+  --checkbox-color: rgb(var(--callout-color));
+  --checkbox-color-hover: var(--checkbox-color);
+  --checkbox-border-color: var(--checkbox-color);
+  --checkbox-border-color-hover: var(--checkbox-color);
+
+  --icon-size: var(--icon-s);
+
+  --n-callout-accent: color-mix(in oklab, rgb(var(--callout-color)) var(--n-mix), rgb(var(--mono-rgb-100)));
+  --n-callout-accent-hover: color-mix(in oklab, rgb(var(--callout-color)) var(--n-mix-hover), rgb(var(--mono-rgb-100)));
+
+  --n-callout-code-background: rgb(var(--callout-color), var(--n-opacity-dim));
+  --n-callout-code-background-hover: rgb(var(--callout-color), var(--n-opacity-muted));
+  --n-callout-code-border-color: var(--n-callout-code-background);
+
+  &[data-callout="attention"] {
+    --callout-color: var(--color-red-rgb);
+  }
+
+  &[data-callout="missing"] {
+    --callout-color: var(--color-orange-rgb);
+  }
+
+  .callout-content {
+    --p-spacing: calc(var(--size-4-5) * 0.75);
+  }
+}
+
+.callout {
+  margin-block: var(--p-spacing);
+  outline: var(--divider-width) solid rgb(var(--callout-color), 0.1);
+  outline-offset: calc(var(--divider-width) * -1);
+  border: unset;
+  box-shadow: var(--shadow-s);
+
+  @include polka-dots($background: rgb(var(--callout-color), 0.1));
+
+  .callout {
+    margin-block: calc(var(--p-spacing) * 0.75);
+    background-image: unset;
+  }
+
+  h2::before {
+    content: unset !important;
+  }
+
+  :not(pre) > code {
+    --code-normal: var(--n-callout-accent) !important;
+    --code-background: var(--n-callout-code-background) !important;
+    --code-border-color: transparent !important;
+
+    &:hover {
+      --code-background: var(--n-callout-code-background-hover) !important;
+    }
+  }
+
+  pre {
+    --code-border-color: var(--n-callout-code-border-color);
+  }
+}
+
+.callout-title {
+  gap: var(--size-4-2);
+}
+
+.callout:not([data-callout^="<"]) .callout-title {
+  text-transform: uppercase;
+}
+
+.callout-content {
+  overflow: visible;
+  line-height: calc(var(--line-height-normal) - 0.1);
+
+  > :last-child {
+    margin-bottom: 0 !important;
+  }
+
+  > ul,
+  > ol {
+    margin-left: -0.3em;
+  }
+}
+
+@each $color in $colors {
+  .callout[data-callout*="<#{'' + $color}>"] {
+    --callout-color: var(--color-#{$color}-rgb);
+
+    .callout-icon {
+      display: none;
+    }
+  }
+}

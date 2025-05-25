@@ -1,0 +1,8 @@
+body.obsidian-app {
+  --blockquote-color: var(--text-muted);
+  --blockquote-font-style: italic;
+}
+
+.markdown-rendered blockquote {
+  padding: var(--size-4-2) var(--size-4-5);
+}

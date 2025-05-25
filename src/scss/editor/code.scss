@@ -1,0 +1,138 @@
+body.obsidian-app {
+  --code-size: var(--font-ui-smaller);
+  --code-border-width: var(--divider-width);
+  --code-radius: var(--n-radius);
+
+  --code-function: var(--color-blue);
+  --code-important: var(--color-purple);
+  --code-keyword: var(--color-purple);
+  --code-property: var(--color-blue);
+  --code-tag: var(--color-blue);
+  --code-operator: var(--code-normal);
+  --code-punctuation: var(--code-normal);
+}
+
+code {
+  font-weight: var(--font-semibold);
+}
+
+pre,
+code,
+.HyperMD-codeblock,
+.cm-inline-code {
+  letter-spacing: 0;
+}
+
+/**
+ * Tokens
+ */
+.token.number,
+.cm-number {
+  color: var(--color-pink);
+}
+
+.token.variable,
+.cm-variable {
+  color: var(--code-normal);
+}
+
+.token.constant,
+.cm-constant {
+  color: var(--color-red);
+}
+
+.cm-def {
+  color: var(--color-purple);
+}
+
+/**
+ * Inline
+ */
+.markdown-rendered :not(pre) > code,
+.cm-inline-code {
+  --code-radius: var(--radius-s);
+  --code-background: transparent;
+
+  transition:
+    background-color var(--n-duration),
+    border-color var(--n-duration);
+}
+
+.markdown-rendered :not(pre) > code:is(:focus, :hover),
+.cm-active > .cm-inline-code {
+  --code-border-color: var(--background-modifier-border-hover);
+}
+
+/**
+ * Block
+ */
+.markdown-rendered {
+  pre {
+    padding: var(--size-4-4) var(--size-4-5);
+    margin-block: var(--p-spacing);
+    border-radius: var(--n-radius);
+  }
+
+  button.copy-code-button {
+    display: flex !important;
+    color: var(--text-faint);
+    background-color: var(--n-button-background);
+    box-shadow: var(--shadow-s);
+    opacity: 0;
+    transform: translateZ(0);
+    scale: 0;
+    transition:
+      scale var(--n-duration),
+      opacity var(--n-duration);
+
+    svg {
+      --icon-size: var(--icon-xs);
+    }
+  }
+
+  pre:is(:focus, :focus-within, :hover) button.copy-code-button,
+  pre button.copy-code-button:has(.lucide-check) {
+    opacity: 1;
+    scale: 1;
+    transition-delay: var(--n-duration-slow);
+  }
+
+  pre button.copy-code-button:hover {
+    color: var(--text-normal);
+    background-color: var(--n-button-background-hover);
+  }
+
+  pre button.copy-code-button:has(.lucide-check) {
+    background-color: rgb(var(--color-green-rgb), 0.2) !important;
+  }
+}
+
+.markdown-source-view.mod-cm6 {
+  .code-block-flair {
+    padding: var(--size-2-1) var(--size-4-2);
+    font-size: var(--font-ui-smallest);
+    color: var(--text-faint);
+    background-color: var(--n-button-background) !important;
+    border-radius: var(--radius-s);
+
+    &:hover {
+      color: var(--text-muted);
+    }
+  }
+
+  .cm-line.HyperMD-codeblock {
+    padding-left: var(--size-4-5);
+  }
+}
+
+.code-block-flair:has(.lucide-copy) {
+  display: none !important;
+}
+
+/**
+ * Charts
+ */
+div.mermaid {
+  overflow-x: auto;
+  text-align: center;
+}

@@ -1,0 +1,18 @@
+body.obsidian-app {
+  --input-radius: var(--radius-s);
+  --tag-radius: var(--radius-s);
+  --pill-radius: var(--radius-s);
+
+  --checklist-done-decoration: none;
+  --checklist-done-color: var(--text-normal);
+}
+
+.multi-select-input {
+  line-height: 1;
+
+  &:not(:focus) {
+    position: absolute;
+    min-width: unset;
+    height: 0;
+  }
+}

@@ -1,0 +1,97 @@
+@use "../abstract/mixins" as *;
+
+/**
+ * File Explorer
+ */
+.nav-folder-title-content,
+.nav-file-title-content {
+  flex-grow: 1;
+}
+
+.nav-file-tag {
+  color: var(--text-muted);
+  outline: var(--divider-width) solid var(--background-modifier-border);
+  background-color: transparent;
+  border-radius: 2px;
+}
+
+.nav-file-title {
+  &:hover,
+  &.is-active {
+    .nav-file-tag {
+      outline-color: var(--background-modifier-border-hover);
+    }
+  }
+
+  &:hover:not(.is-active) .tree-item-icon {
+    color: var(--text-normal);
+  }
+
+  &.is-active .tree-item-icon {
+    color: var(--text-accent);
+  }
+
+  &.is-being-dragged .tree-item-icon {
+    color: var(--text-on-accent);
+  }
+}
+
+body.obsidian-app.iconic-uncolor-drag .nav-file-title.is-being-dragged svg {
+  color: var(--text-on-accent) !important;
+}
+
+/**
+ * Buttons
+ */
+.workspace-tabs.mod-active .workspace-tab-header.is-active,
+.tree-item-self.is-active:not(.is-being-dragged) {
+  --nav-item-color-active: var(--text-accent);
+  --tab-text-color-focused-active-current: var(--nav-item-color-active);
+}
+
+.clickable-icon,
+.markdown-embed-link,
+.edit-block-button,
+.workspace > .workspace-split:not(.mod-root) .workspace-tab-header,
+.workspace-drawer-vault-switcher {
+  &:hover,
+  &.is-active {
+    outline: var(--outline-width) solid rgb(var(--mono-rgb-100), 0.1);
+    outline-offset: calc(var(--outline-width) * -1);
+  }
+}
+
+.tree-item-self.is-active:not(.is-being-dragged) {
+  background-color: var(--background-modifier-active-hover) !important;
+}
+
+/**
+ * Breadcrumbs
+ */
+body.obsidian-app.show-inline-title .view-header-title-container:has(.view-header-breadcrumb) {
+  .view-header-title,
+  .view-header-breadcrumb-separator:last-child {
+    display: none;
+  }
+}
+
+.view-header-title-container:has(.view-header-breadcrumb) {
+  @media screen and (width >= 750px) {
+    .view-header-breadcrumb-separator {
+      padding-inline: var(--size-2-2);
+    }
+  }
+}
+
+/**
+ * Scroll Gradient
+ */
+.mod-root .workspace-leaf-content[data-type="markdown"] > .view-content {
+  &::before {
+    @include scroll-fade($height: var(--size-4-6), $inset: var(--size-4-6));
+  }
+
+  &::after {
+    @include scroll-fade($height: var(--size-4-6), $inset: var(--size-4-6), $position: "bottom");
+  }
+}

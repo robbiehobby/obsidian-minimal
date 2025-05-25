@@ -1,0 +1,72 @@
+@use "../abstract/mixins" as *;
+
+/**
+ * Search
+ */
+.search-result-file-match:hover {
+  background-color: var(--background-modifier-border);
+}
+
+/**
+ * Find & Replace
+ */
+.mod-root .document-search-container {
+  position: relative;
+
+  &::after {
+    @include scroll-fade($height: var(--size-4-6), $inset: var(--size-4-6));
+
+    bottom: calc(var(--size-4-6) * -1);
+  }
+}
+
+body.obsidian-app:not(.is-mobile) {
+  .document-search-container {
+    margin-inline: 0;
+
+    &::after {
+      inset-inline: 0;
+      width: 100%;
+    }
+  }
+
+  .mod-root {
+    .document-search-container {
+      margin-inline: var(--file-margins);
+    }
+
+    .document-search,
+    .document-replace {
+      padding-inline: 0;
+    }
+  }
+}
+
+body.obsidian-app.is-mobile .mod-root .document-search-container {
+  padding-inline: var(--size-4-6) !important;
+  border-bottom: 0;
+}
+
+/**
+ * Match Animation
+ */
+@keyframes flashing {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+
+  25%,
+  75% {
+    opacity: 0.5;
+  }
+}
+
+.is-flashing {
+  background-color: initial !important;
+  border-radius: initial;
+  mix-blend-mode: initial;
+  transition: initial;
+  animation: flashing 1s both 1;
+}
